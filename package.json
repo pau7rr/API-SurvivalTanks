@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "setup": "composer install && npm install && npm run dev && copy .env.example .env"
+        "setup": "composer update && composer install && npm install && npm run dev && copy .env.example .env"
     },
     "devDependencies": {
         "axios": "^0.21",
