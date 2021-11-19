@@ -17,6 +17,7 @@ class CreateDevlogsTable extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->string('slug')->unique();
+            $table->string('version')->unique();
             $table->string('summary');
             $table->string('content');
             $table->date('publication_date');
