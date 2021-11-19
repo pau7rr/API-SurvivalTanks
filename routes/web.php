@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\Administrative\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Index Route
+Route::get('/', [LoginController::class, 'login'])->middleware('alreadyLoggedIn');
 
-Auth::routes();
+// Auth Routes
+Route::post('/check', [AdminAuthController::class, 'check'])->name('auth.check');
+Route::get('/logout', [AdminAuthController::class, 'logout']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Dashboard Routes
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('isLogged');
