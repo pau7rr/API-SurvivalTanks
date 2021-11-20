@@ -11,7 +11,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/general.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/tankEditor.css') }}" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
@@ -71,9 +71,10 @@
     <div class="container">
         <div class="text-center">
             <p class="title border-bottom">Survival Tanks</p>
-            <p class="h3 text-muted">Dashboard</p>
+            <p class="h3 text-muted">Tank Editor</p>
         </div>
     </div>
+    <!-- Tank Editor -->
 
 
 
