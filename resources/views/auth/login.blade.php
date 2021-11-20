@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="icon" href="../img/logo/logo_icon_100x100_black.png">
         <title>CMS Login</title>
 
         <style>
@@ -13,7 +13,8 @@
         </style>
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="../css/cube.css">
+        <link href="{{ asset('css/general.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/cube.css') }}" rel="stylesheet">
     </head>
     <body>
         <div class="container mt-5">

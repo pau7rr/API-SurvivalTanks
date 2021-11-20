@@ -68,11 +68,15 @@
         </nav>
     </div>
     <!-- Title -->
-    <div class="container">
+    <div class="container mb-5">
         <div class="text-center">
             <p class="title border-bottom">Survival Tanks</p>
-            <p class="h3 text-muted">Dashboard</p>
+            <p class="h3 text-muted">Devlog</p>
         </div>
+    </div>
+    <!-- Devlog -->
+    <div class="container ">
+        
     </div>
 
 
