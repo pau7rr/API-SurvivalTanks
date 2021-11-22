@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DevlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Auth\AdminAuthController;
@@ -24,7 +25,6 @@ Route::get('/', [LoginController::class, 'login'])->middleware('alreadyLoggedIn'
 // Auth Routes
 Route::post('/check', [AdminAuthController::class, 'check'])->name('auth.check');
 Route::get('/logout', [AdminAuthController::class, 'logout']);
-
 
 // Administrative Routes
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('isLogged');
