@@ -84,7 +84,7 @@ class DevlogController extends Controller
 
         $devlog->update($request->all());
         
-        return redirect()->route('devlog.index')->with('success','Devlog updated successfully');
+        return redirect()->route('devlogs.index')->with('success','Devlog updated successfully');
     }
 
     /**

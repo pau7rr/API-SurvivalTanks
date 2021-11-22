@@ -1,7 +1,7 @@
 <div class="row">
         <div class="">
             <div class="">
-                <h2>Edit Product</h2>
+                <h2>Edit Devlog</h2>
             </div>
             <div class="">
                 <a class="" href="{{ route('devlogs.index') }}"> Back</a>
@@ -37,16 +37,21 @@
                     <input type="text" name="slug" value="{{ $devlog->slug }}" class="" placeholder="Slug">
                 </div>
             </div>
-
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $devlog->slug }}</textarea>
+            <div class="">
+                <div class="">
+                    <strong>Version:</strong>
+                    <input type="text" name="version" value="{{ $devlog->version }}" class="" placeholder="Version">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="">
+                <div class="">
+                    <strong>Summary:</strong>
+
+                    <textarea class="" style="height:150px" name="summary" placeholder="Summary">{{ $devlog->summary }}</textarea>
+                </div>
+            </div>
+            <div class="">
+              <button type="submit" class="">Submit</button>
             </div>
         </div>
    

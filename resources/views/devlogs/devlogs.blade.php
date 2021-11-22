@@ -30,7 +30,7 @@
             <td>{{ $devlog->version }}</td>
             <td>{{ $devlog->summary }}</td>
             <td>{{ $devlog->content }}</td>
-            <td><img width="50px" class="rounded-circle" src="{{ $devlog->thumbnail_url }}"></td>
+            <td><img width="50px" class="thumbnail rounded-circle" src="{{ $devlog->thumbnail_url }}"></td>
             <td>
                 <form class="" action="" method="POST">
 
