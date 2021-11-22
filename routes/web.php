@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\DevlogController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\Administrative\DashboardController;
+use App\Http\Controllers\Administrative\TankEditorController;
+use App\Http\Controllers\Administrative\DevlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Index Route
+Route::get('/', [LoginController::class, 'login'])->middleware('alreadyLoggedIn');
 
-Auth::routes();
+// Auth Routes
+Route::post('/check', [AdminAuthController::class, 'check'])->name('auth.check');
+Route::get('/logout', [AdminAuthController::class, 'logout']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::resource('devlogs', DevlogController::class);
-
+// Administrative Routes
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('isLogged');
+Route::get('/tankEditor', [TankEditorController::class, 'tankEditor'])->middleware('isLogged');
+Route::get('/devlog', [DevLogController::class, 'devlog'])->middleware('isLogged');

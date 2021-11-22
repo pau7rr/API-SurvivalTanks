@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #d6d6d6;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.cube {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: animate 15s linear infinite;
+}
+@keyframes animate {
+    0%
+    {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%
+    {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+.cube div {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.cube div span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515, #002bec);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(50px);/*translateZ(150px on logging in)*/
+}
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(50px);
+}
+.top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: rgb(0, 68, 255);
+    transform: translateZ(-150px);
+    filter:blur(20px);
+    box-shadow: 0 0 120px rgba(0, 4, 255, 0.2),
+    0 0 200px rgba(0, 26, 255, 0.4),
+    0 0 300px rgba(0, 4, 255, 0.6),
+    0 0 400px rgba(0, 4, 255, 0.8),
+    0 0 500px rgb(13, 0, 201);
+}
+.btn-login {
+    color: #d6d6d6;
+    background: rgb(0, 51, 192);
+}
+@media only screen and (max-width: 800px) {
+    .cube-col {
+        margin-left: 120px;
+    }
+    .cube div {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+    }
+  }
