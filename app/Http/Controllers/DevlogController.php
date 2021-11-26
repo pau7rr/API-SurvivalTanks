@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Devlog;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class DevlogController extends Controller
     {
         $devlogs = Devlog::latest()->paginate(6);
 
-        return view('devlogs.devlogs',compact('devlogs'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('devlogs.devlogs', compact('devlogs'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
