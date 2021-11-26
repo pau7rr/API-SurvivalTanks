@@ -12,8 +12,8 @@
             }
         </style>
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/general.css') }}" rel="stylesheet">
+        @livewireStyles
+        @livewire('style-imports')
         <link href="{{ asset('css/cube.css') }}" rel="stylesheet">
     </head>
     <body>
@@ -62,3 +62,5 @@
         </div>
     </body>
 </html>
+
+@livewireScripts
