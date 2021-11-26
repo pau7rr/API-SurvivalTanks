@@ -10,12 +10,23 @@
 .bg-dark-green {
     background: rgb(34, 104, 23);
 }
+.bg-dark-0 {background: rgba(242, 242, 242, 0.05);}
+.bg-dark-1 {background: rgba(242, 242, 242, 0.1);}
+.bg-dark-2 {background: rgba(242, 242, 242, 0.2);}
+.bg-dark-3 {background: rgba(242, 242, 242, 0.3);}
+.bg-dark-4 {background: rgba(242, 242, 242, 0.4);}
+.bg-dark-5 {background: rgba(242, 242, 242, 0.5);}
+.bg-dark-6 {background: rgba(242, 242, 242, 0.6);}
+.bg-dark-7 {background: rgba(242, 242, 242, 0.7);}
+.bg-dark-8 {background: rgba(242, 242, 242, 0.8);}
+.bg-dark-9 {background: rgba(242, 242, 242, 0.9);}
 
 /*General*/
 body {
     background-color: #1b1b1b;
     color: #d6d6d6;
 }
+
 
 /*Title*/
 .title {
