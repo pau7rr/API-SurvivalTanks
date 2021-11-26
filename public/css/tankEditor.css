@@ -1,0 +1,66 @@
+/*Tank Editor*/
+.bg-image {
+    height: 325px;
+    width: 100%;
+}
+.gun-image {
+    position: absolute;
+    top: 25px;
+    left: 61px;
+    z-index: 3;
+}
+.tower-image {
+    position: absolute;
+    top: 100px;
+    left: 61px;
+    z-index: 4;
+}
+.hull-image {
+    position: absolute;
+    top: 100px;
+    left: 61px;
+    z-index: 2;
+}
+.track-left-image {
+    position: absolute;
+    width: 55%;
+    top: 120px;
+    left: 20px;
+    z-index: 1;
+}
+.track-right-image {
+    position: absolute;
+    width: 55%;
+    top: 120px;
+    left: 150px;
+    z-index: 1;
+}
+
+/* Tank Parts Swiper */
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+
+/* Center slide text vertically */
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.swiper {
+    width: 100%;
+}
+
