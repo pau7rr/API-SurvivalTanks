@@ -10,9 +10,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-
-
-
 </head>
 
 <body>
@@ -48,6 +45,54 @@
             @endforeach
         </tbody>
     </table>
+
+       <!-- Update Modal -->
+       <div id="updateModal" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Update DevLog</h4>
+                    </div>
+
+                    <!-- Modal Form -->
+                    <form id="updateForm" action="" method="POST">
+
+                        {{ csrf_field() }}
+                        {{ method_field('POST') }}
+
+                        <div class="modal-body">
+                            <!-- Input Id READONLY -->
+                            <div class="form-group">
+                                <input readonly="readonly" name="update_id" id="update_id" class="form-control" placeholder="Insereix les dades a modificar">
+                            </div>
+                            <!-- Input Gols Equip Local -->
+                            <div class="form-group">
+                                <label>Gols Equip Local</label>
+                                <input type="text" name="update_glocal" id="update_glocal" class="form-control" placeholder="Gols de l'Equip Local">
+                            </div>
+                            <!-- Input Gols Equip Visitant -->
+                            <div class="form-group">
+                                <label>Gols Equip Visitant</label>
+                                <input type="text" name="update_gvisitant" id="update_gvisitant" class="form-control" placeholder="Gols de l'Equip Visitant">
+                            </div>
+                            <!-- Input Date -->
+                            <div class="form-group">
+                                <label>Data</label>
+                                <input type="date" name="update_data" id="update_data" class="form-control" placeholder="Data del partit">
+                            </div>
+                        </div>
+
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Acceptar</button>
+                            <a type="button" class="btn btn-secondary" href="" data-dismiss="modal">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
 </body>
 
 </html>
