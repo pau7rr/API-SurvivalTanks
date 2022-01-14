@@ -28,3 +28,4 @@ Route::get('/logout', [AdminAuthController::class, 'logout']);
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('isLogged');
 Route::get('/tankEditor', [TankEditorController::class, 'tankEditor'])->middleware('isLogged');
 Route::resource('/devlogs', DevlogController::class)->middleware('isLogged');
+

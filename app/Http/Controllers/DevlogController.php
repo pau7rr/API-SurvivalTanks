@@ -27,7 +27,7 @@ class DevlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('devlogs.create');
     }
 
     /**
@@ -38,7 +38,20 @@ class DevlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title',
+            'slug',
+            'version',
+            'summary',
+            'content',
+            'publication_date',
+            'thumbnail_url',    
+            'image_url'
+        ]);
+    
+        Devlog::create($request->all());
+     
+        return redirect()->route('devlogs.index')->with('success','Product created successfully.');
     }
 
     /**
@@ -72,6 +85,7 @@ class DevlogController extends Controller
      */
     public function update(Request $request, Devlog $devlog)
     {
+        
         $request->validate([
             'title',
             'slug',
@@ -84,6 +98,7 @@ class DevlogController extends Controller
         ]);
 
         $devlog->update($request->all());
+        
         
         return redirect()->route('devlogs.index')->with('success','Devlog updated successfully');
     }
