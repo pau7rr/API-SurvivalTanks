@@ -13,6 +13,9 @@
 </head>
 
 <body>
+
+    @livewire('navbar')
+
     <table id="datatable" class="table table-striped">
         <div class="d-flex flex-row-reverse">
         <a class="btn btn-success" href="{{ route('devlogs.create') }}"> Create New Devlog</a>
