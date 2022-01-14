@@ -20,7 +20,7 @@
                             <a class="nav-link" href="/tanks">Tanks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/devlog">Devlog</a>
+                            <a class="nav-link" href="/devlogs">Devlog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/botiga">Botiga</a>
