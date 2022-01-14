@@ -39,8 +39,6 @@
                 <td>{{ $devlog->content }}</td>
                 <td>
                 <form action="{{ route('devlogs.destroy',$devlog->id) }}" method="POST">
-   
-                    <a class="btn btn-warning" href="{{ route('devlogs.show',$devlog->id) }}">Show</a>
     
                     <a class="btn btn-primary" href="{{ route('devlogs.edit',$devlog->id) }}">Edit</a>
    

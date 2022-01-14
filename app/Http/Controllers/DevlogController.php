@@ -111,6 +111,8 @@ class DevlogController extends Controller
      */
     public function destroy(Devlog $devlog)
     {
-        //
+        $devlog->delete();
+    
+        return redirect()->route('devlogs.index')->with('success','Devlog deleted successfully');
     }
 }
