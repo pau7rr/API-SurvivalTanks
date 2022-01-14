@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Devlog;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class DevlogController extends Controller
     {
         $devlogs = Devlog::latest()->paginate(6);
 
-        return view('devlogs.devlogs',compact('devlogs'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('devlogs.devlogs', compact('devlogs'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -26,7 +27,7 @@ class DevlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('devlogs.create');
     }
 
     /**
@@ -37,7 +38,20 @@ class DevlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title',
+            'slug',
+            'version',
+            'summary',
+            'content',
+            'publication_date',
+            'thumbnail_url',    
+            'image_url'
+        ]);
+    
+        Devlog::create($request->all());
+     
+        return redirect()->route('devlogs.index')->with('success','Product created successfully.');
     }
 
     /**
@@ -71,6 +85,7 @@ class DevlogController extends Controller
      */
     public function update(Request $request, Devlog $devlog)
     {
+        
         $request->validate([
             'title',
             'slug',
@@ -84,6 +99,7 @@ class DevlogController extends Controller
 
         $devlog->update($request->all());
         
+        
         return redirect()->route('devlogs.index')->with('success','Devlog updated successfully');
     }
 
@@ -95,6 +111,8 @@ class DevlogController extends Controller
      */
     public function destroy(Devlog $devlog)
     {
-        //
+        $devlog->delete();
+    
+        return redirect()->route('devlogs.index')->with('success','Devlog deleted successfully');
     }
 }
