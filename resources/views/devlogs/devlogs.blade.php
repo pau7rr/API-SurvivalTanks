@@ -12,23 +12,38 @@
     <!-- Styles -->
     @livewireStyles
     @livewire('style-imports')
-    
+
+    <style>
+
+    </style>
+
 </head>
 
-<body>
+<body class="bg-light">
 
     @livewire('navbar')
 
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{$message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+
     <table id="datatable" class="table table-striped">
         <div class="d-flex flex-row-reverse">
-        <a class="btn btn-success" href="{{ route('devlogs.create') }}"> Create New Devlog</a>
+            <a class="btn btn-success" href="{{ route('devlogs.create') }}"> Create New Devlog</a>
         </div>
         <thead class="table-dark">
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Version</th>
-                <th scope="col">Thumbnail</th></th>
+                <th scope="col">Thumbnail</th>
+                </th>
                 <th scope="col">Summary</th>
                 <th scope="col">Content</th>
                 <th scope="col">Actions</th>
@@ -40,20 +55,20 @@
                 <td>{{ $devlog->id }}</td>
                 <td>{{ $devlog->title }}</td>
                 <td>{{ $devlog->version }}</td>
-                <td ><img id="thumbnail" width="50px" height="50px" class="thumbnail rounded-circle" src="{{ $devlog->thumbnail_url }}"></td>
+                <td><img id="thumbnail" width="50px" height="50px" class="thumbnail rounded-circle" src="{{ $devlog->thumbnail_url }}"></td>
                 <td>{{ $devlog->summary }}</td>
                 <td>{{ $devlog->content }}</td>
                 <td>
-                <form action="{{ route('devlogs.destroy',$devlog->id) }}" method="POST">
-    
-                    <a class="btn btn-primary" href="{{ route('devlogs.edit',$devlog->id) }}">Edit</a>
-   
-                    @csrf
-                    @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
+                    <form action="{{ route('devlogs.destroy',$devlog->id) }}" method="POST">
+
+                        <a class="btn btn-primary" href="{{ route('devlogs.edit',$devlog->id) }}">Edit</a>
+
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>
