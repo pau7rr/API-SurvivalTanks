@@ -7,7 +7,7 @@ use App\Http\Controllers\tankController;
 
 
 use App\Http\Controllers\Administrative\TankEditorController;
-use App\Http\Controllers\Administrative\DevlogController;
+use App\Http\Controllers\DevlogController;
 
 
 /*
@@ -38,3 +38,7 @@ Route::group(['middleware' => 'isLogged'], function() {
         'tanks' => tankController::class,
     ]);
 });
+
+Route::resource('/devlogs', DevlogController::class)->middleware('isLogged');
+
+
