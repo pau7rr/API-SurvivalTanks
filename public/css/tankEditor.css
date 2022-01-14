@@ -1,41 +1,40 @@
-/*Tank Editor*/
+/*Tank Preview*/
 .bg-image {
-    height: 325px;
+    height: 400px;
     width: 100%;
-}
-.gun-image {
-    position: absolute;
-    top: 25px;
-    left: 61px;
-    z-index: 3;
 }
 .tower-image {
     position: absolute;
-    top: 100px;
-    left: 61px;
+    top: 50px;
+    left: 0px;
     z-index: 4;
 }
 .hull-image {
     position: absolute;
-    top: 100px;
-    left: 61px;
+    top: 160px;
+    left: 67px;
     z-index: 2;
 }
 .track-left-image {
     position: absolute;
     width: 55%;
-    top: 120px;
+    top: 180px;
     left: 20px;
     z-index: 1;
 }
 .track-right-image {
     position: absolute;
     width: 55%;
-    top: 120px;
-    left: 150px;
+    top: 180px;
+    left: 160px;
     z-index: 1;
 }
-
+.bullet-image {
+    position: absolute;
+    top: 380px;
+    left: 0px;
+    z-index: 4;
+}
 /* Tank Parts Swiper */
 .swiper {
     width: 100%;

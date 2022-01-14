@@ -14,22 +14,22 @@
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">   
-                            <a class="nav-link" href="dashboard">Dashboard</a>
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="tankEditor">Tank Editor</a>
+                            <a class="nav-link" href="/tanks">Tanks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="devlog">Devlog</a>
+                            <a class="nav-link" href="/devlog">Devlog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="botiga">Botiga</a>
+                            <a class="nav-link" href="/botiga">Botiga</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="noticies">Notícies</a>
+                            <a class="nav-link" href="/noticies">Notícies</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="resultats">Resultats</a>
+                            <a class="nav-link" href="/resultats">Resultats</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/contacte">Contacte</a>

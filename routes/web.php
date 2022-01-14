@@ -3,8 +3,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Administrative\DashboardController;
+use App\Http\Controllers\tankController;
+
+
 use App\Http\Controllers\Administrative\TankEditorController;
 use App\Http\Controllers\Administrative\DevlogController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +30,11 @@ Route::get('/logout', [AdminAuthController::class, 'logout']);
 
 // Administrative Routes
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('isLogged');
-Route::get('/tankEditor', [TankEditorController::class, 'tankEditor'])->middleware('isLogged');
 Route::get('/devlog', [DevLogController::class, 'devlog'])->middleware('isLogged');
+
+//Tanks Routes
+Route::group(['middleware' => 'isLogged'], function() {
+    Route::resources([
+        'tanks' => tankController::class,
+    ]);
+});
