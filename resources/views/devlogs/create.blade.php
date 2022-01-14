@@ -9,16 +9,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New Product</h2>
+<body class="p-5">
+<div class="mb-4" >
+        <div class="">
+            <div class="">
+                <h2>Add New Devlog</h2>
+            </div>
+            <div class="">
+                <a class="" href="{{ route('devlogs.index') }}"> Back</a>
+            </div>
         </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('devlogs.index') }}"> Back</a>
-        </div>
-    </div>
 </div>
    
 @if ($errors->any())
