@@ -9,8 +9,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
-<div class="">
+<body class="p-5">
+<div class="mb-4" >
         <div class="">
             <div class="">
                 <h2>Edit Devlog</h2>
@@ -19,7 +19,7 @@
                 <a class="" href="{{ route('devlogs.index') }}"> Back</a>
             </div>
         </div>
-    </div>
+</div>
    
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -32,66 +32,66 @@
         </div>
     @endif
   
-    <form action="{{ route('devlogs.update', $devlog->id) }}" method="POST">
+    <form class="" action="{{ route('devlogs.update', $devlog->id) }}" method="POST">
         @csrf
         @method('PUT')
    
          <div class="">
-            <div class="">
+            <div class="mb-2">
                 <div class="">
                     <strong>Title:</strong>
-                    <input type="text" name="title" value="{{ $devlog->title }}" class="" placeholder="Title">
+                    <input type="text" name="title" value="{{ $devlog->title }}" class="form-control" placeholder="Title">
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2">
                 <div class="">
                     <strong>Slug:</strong>
-                    <input type="text" name="slug" value="{{ $devlog->slug }}" class="" placeholder="Slug">
+                    <input type="text" name="slug" value="{{ $devlog->slug }}" class="form-control" placeholder="Slug">
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2">
                 <div class="">
                     <strong>Version:</strong>
-                    <input type="text" name="version" value="{{ $devlog->version }}" class="" placeholder="Version">
+                    <input class="form-control" type="text" name="version" value="{{ $devlog->version }}"  placeholder="Version">
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2">
                 <div class="">
                     <strong>Summary:</strong>
 
-                    <textarea class="" style="height:150px" name="summary" placeholder="Summary">{{ $devlog->summary }}</textarea>
+                    <textarea class="form-control" name="summary" placeholder="Summary">{{ $devlog->summary }}</textarea>
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2">
                 <div class="">
                     <strong>Content:</strong>
 
-                    <textarea class="" style="height:150px" name="content" placeholder="Content">{{ $devlog->content }}</textarea>
+                    <textarea class="form-control" name="content" placeholder="Content">{{ $devlog->content }}</textarea>
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2">
                 <div class="">
                     <strong>Publication Date:</strong>
 
-                    <input class="" name="publication_date" value="{{ $devlog->publication_date }}">
+                    <input class="form-control" name="publication_date" value="{{ $devlog->publication_date }}">
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2">
                 <div class="">
                     <strong>Thumbnail:</strong>
 
-                    <input class="w-50" name="thumbnail_url" value="{{ $devlog->thumbnail_url }}">
+                    <input class="form-control" name="thumbnail_url" value="{{ $devlog->thumbnail_url }}">
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2">
                 <div class="">
                     <strong>Image:</strong>
 
-                    <input class="w-50" name="image_url" value="{{ $devlog->image_url }}">
+                    <input class="form-control" name="image_url" value="{{ $devlog->image_url }}">
                 </div>
-            </div>
-            <div class="">
-              <button type="submit" class="">Submit</button>
+            </div>  
+            <div class="mt-4">
+              <button type="submit" class="btn btn-success">Submit</button>
             </div>
         </div>
    

@@ -1,6 +1,6 @@
 <!-- Navbar -->
-<div class="container.fluid sticky-top mb-5">
-    <nav class="navbar navbar-expand-md bg-dark-blue navbar-dark border-bottom mt-3 mb-3" role="navigation">
+<div class="container.fluid sticky-top">
+    <nav class="navbar navbar-expand-md bg-dark-blue navbar-dark border-bottom" role="navigation">
             <!--Navbar Logo -->
             <a class="navbar-brand" href="/">
                 <img src="../img/logo/logo_500x200_white.png" width="100" height="50"/>
@@ -20,7 +20,7 @@
                             <a class="nav-link" href="/tanks">Tanks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/devlog">Devlog</a>
+                            <a class="nav-link" href="/devlogs">Devlog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/botiga">Botiga</a>
