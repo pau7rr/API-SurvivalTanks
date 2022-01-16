@@ -14,7 +14,7 @@
         <!-- Styles -->
         @livewireStyles
         @livewire('style-imports')
-        <link href="{{ asset('css/cube.css') }}" rel="stylesheet">
+        <link href="/css/cube.css') }}" rel="stylesheet">
     </head>
     <body>
         <div class="container mt-5">
