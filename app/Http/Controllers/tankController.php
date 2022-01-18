@@ -91,7 +91,11 @@ class tankController extends Controller
      */
     public function edit($id)
     {
-        return view('tanks.edit');
+        $tank = Tank::find($id);
+        $data = [
+            'tank' => $tank
+        ];
+        return view('tanks.edit', $data);
     }
 
     /**
@@ -104,13 +108,34 @@ class tankController extends Controller
     public function update(Request $request, $id)
     {
         //Validate request
+        $this->validate($request, [
+            'strengh' => 'required',
+            'health' => 'required',
+            'speed' => 'required',
+            'tower' => 'required|max:255',
+            'body' => 'required|max:255',
+            'track' => 'required|max:255',
+            'bullet' => 'required|max:255',
+        ]);
 
         //Search tank instance in DB
+        $tank = Tank::find($id);
 
-        //Update into DB
+        if ($tank) {
+            //Update into DB
+            $tank->strengh = $request->input('strengh');
+            $tank->health = $request->input('health');
+            $tank->speed = $request->input('speed');
+            $tank->tower = $request->input('tower');
+            $tank->body = $request->input('body');
+            $tank->track = $request->input('track');
+            $tank->bullet = $request->input('bullet');
+            $tank->update();
 
-
-        return view('tanks.create')->with('success', 'Tank successfully updated');
+            return redirect('tanks')->with('success', 'Tank successfully updated');
+        } else {
+            return redirect('tanks')->with('fail', 'Tank could not be updated');
+        }
     }
 
     /**

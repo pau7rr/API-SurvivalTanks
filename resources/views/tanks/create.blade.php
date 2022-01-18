@@ -91,7 +91,7 @@
                             </div>
                             <div id="bulletSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
-                                    <img src="../img/assets/tankConstructor/bulletExports/01.png" class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../img/assets/tankConstructor/Bullets/01.png" class="swiper-slide text-center flex flex-column bullet-selector-image">
                                     <img src="../img/assets/tankConstructor/Bullets/12.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
                                     <img src="../img/assets/tankConstructor/Bullets/25.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
                                     <img src="../img/assets/tankConstructor/Bullets/33.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
@@ -143,7 +143,6 @@
                                 <img id="hullImg" src="../img/assets/tankConstructor/Hulls/SmallHullA.png" alt="hull" class="hull-image">
                                 <img id="trackLeftImg" src="../img/assets/tankConstructor/Tracks/TrackAFrame1.png" alt="trackLeft" class="track-left-image">
                                 <img id="trackRightImg" src="../img/assets/tankConstructor/Tracks/TrackAFrame1.png" alt="trackRight" class="track-right-image">
-                                <img id="bulletImg" src="../img/assets/tankConstructor/bulletExports/01.png" alt="bullet" class="bullet-image bg-dark-1">
                             </div>
                         </div>
                     </div>
@@ -174,4 +173,4 @@
 @livewireScripts
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="../js/tankPartsSwiper.js"></script>
+<script src="/js/tankCreate.js"></script>
