@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiDevlogController;
+use App\Http\Controllers\ApiUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('devlogs', [ApiDevlogController::class, 'index']);
+
+Route::post('users', [ApiUserController::class, 'store']);
+
+
 
