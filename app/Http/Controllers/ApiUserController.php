@@ -42,6 +42,43 @@ class ApiUserController extends Controller
         return response()->json($user, 201);
     }
 
+    public function login()
+  {
+
+    if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+
+      $user = Auth::user();
+
+      $success['token'] = $user->createToken('appToken')->accessToken;
+
+      //After successfull authentication, notice how I return json parameters
+
+      return response()->json([
+
+       'success' => true,
+
+       'token' => $success,
+
+       'user' => $user
+
+     ]);
+
+    } else {
+
+    //if authentication is unsuccessfull, notice how I return json parameters
+
+     return response()->json([
+
+      'success' => false,
+
+      'message' => 'Invalid Email or Password',
+
+    ], 401);
+
+    }
+
+  }
+
     /**
 
    * Register api.
@@ -98,47 +135,69 @@ class ApiUserController extends Controller
 
   }
 
-  public function login()
+  public function users()
 
   {
 
-    if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+    if (Auth::user()) {
 
-      $user = Auth::user();
+      dd(Auth::user());
 
-      dd($user);
-
-      $success['token'] = $user->createToken('appToken')->accessToken;
-
-      //After successfull authentication, notice how I return json parameters
+      $users = User::all();
 
       return response()->json([
 
-       'success' => true,
+        'success' => true,
 
-       'token' => $success,
+        'data' => $users
 
-       'user' => $user
+      ]);
 
-     ]);
+    }else {
 
-    } else {
+      return response()->json([
 
-    //if authentication is unsuccessfull, notice how I return json parameters
+        'success' => false,
 
-     return response()->json([
+        'message' => 'Unable to Logout'
 
-      'success' => false,
-
-      'message' => 'Invalid Email or Password',
-
-    ], 401);
+      ]);
 
     }
 
   }
 
+  public function logout(Request $res)
 
+  {
+
+   if (Auth::user()) {
+
+    $user = Auth::user()->token();
+
+    $user->revoke();
+
+    return response()->json([
+
+     'success' => true,
+
+     'message' => 'Logout successfully'
+
+   ]);
+
+   }else {
+
+    return response()->json([
+
+     'success' => false,
+
+     'message' => 'Unable to Logout'
+
+    ]);
+
+   }
+
+   }
 
     /**
      * Display the specified resource.
