@@ -167,6 +167,42 @@ class ApiUserController extends Controller
 
   }
 
+  public function user() {
+
+    if (Auth::user()) {
+
+      $userId = Auth::id();
+      $username = Auth::user()->name;
+      $email = Auth::user()->email;
+
+      $user = (object)[
+        "username" => $username,
+        "email" => $email,
+      ];
+
+      return response()->json([
+
+        'success' => true,
+
+        'data' => $user
+
+      ]);
+
+    } else {
+
+      return response()->json([
+
+        'success' => false,
+
+        'message' => 'Unable to get User'
+
+      ]);
+
+    }
+
+  }
+
+
   public function logout(Request $res)
 
   {
