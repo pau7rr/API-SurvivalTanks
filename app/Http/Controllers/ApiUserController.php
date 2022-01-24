@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+
+use Socialite;
 
 class ApiUserController extends Controller
 {
@@ -35,15 +38,13 @@ class ApiUserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $user = User::create($request->all());
 
         return response()->json($user, 201);
     }
 
-    public function login()
-  {
+    public function login() {
 
     if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
 
@@ -79,19 +80,62 @@ class ApiUserController extends Controller
 
   }
 
-    /**
+  public function socialLogin(Request $request) {
 
-   * Register api.
+    $user = User::all()->where('email', $request->email)->first();
 
-   *
+    if($user) {
 
-   * @return \Illuminate\Http\Response
+      if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
 
-   */
+        $user = Auth::user();
+  
+        $success['token'] = $user->createToken('appToken')->accessToken;
+  
+        return response()->json([
+  
+         'success' => true,
+  
+         'token' => $success,
+  
+         'user' => $user
+  
+       ]);
+  
+      } else {
+    
+        return response()->json([
+    
+          'success' => false,
+    
+          'message' => 'ERROR',
+    
+        ], 401);
+    
+      }
+    }
 
-  public function register(Request $request)
+    $input = $request->all();
 
-  {
+    $input['password'] = bcrypt($input['password']);
+
+    $user = User::create($input);
+
+    $success['token'] = $user->createToken('appToken')->accessToken;
+
+    return response()->json([
+
+     'success' => true,
+
+     'token' => $success,
+
+     'user' => $user
+
+   ]);
+
+  }
+
+  public function register(Request $request) {
 
     $validator = Validator::make($request->all(), [
 
@@ -135,13 +179,9 @@ class ApiUserController extends Controller
 
   }
 
-  public function users()
-
-  {
+  public function users(){
 
     if (Auth::user()) {
-
-      dd(Auth::user());
 
       $users = User::all();
 
@@ -165,6 +205,57 @@ class ApiUserController extends Controller
 
     }
 
+  }
+
+  public function SocialSignup($provider) {
+
+        $user = Socialite::driver('google')->stateless()->user();
+
+        $userObj = (array)[
+          "name" => $user->name,
+          "email" => $user->email,
+          "password" => bcrypt('1234'),
+        ];
+
+        $validator = Validator::make($userObj, [
+
+          'email' => 'required|email|unique:users',
+
+        ]);
+
+        if ($validator->fails()) {
+
+          // User already logged
+
+          $user2 = User::all()->where('email', $user->email)->first();
+
+          $success['token'] = $user2->createToken('appToken')->accessToken;
+
+          return response()->json([
+
+          'success' => true,
+
+          'token' => $success,
+
+          'user' => $user2
+
+          ]);
+     
+        }
+
+        $user = User::create($userObj);
+
+        $success['token'] = $user->createToken('appToken')->accessToken;
+
+         return response()->json([
+
+         'success' => true,
+
+         'token' => $success,
+
+         'user' => $user
+
+         ]);
   }
 
   public function user() {
@@ -203,9 +294,7 @@ class ApiUserController extends Controller
   }
 
 
-  public function logout(Request $res)
-
-  {
+  public function logout(Request $res){
 
    if (Auth::user()) {
 
@@ -233,7 +322,7 @@ class ApiUserController extends Controller
 
    }
 
-   }
+  }
 
     /**
      * Display the specified resource.

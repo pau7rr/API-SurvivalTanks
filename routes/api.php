@@ -31,5 +31,10 @@ Route::get('/user', [ApiUserController::class, 'user'])->middleware('auth:api');
 
 Route::get('/logout', [ApiUserController::class, 'logout'])->middleware('auth:api');
 
+Route::post('sociallogin/{provider}', [ApiUserController::class, 'socialsignup']);
+
+Route::post('sociallogin', [ApiUserController::class, 'socialLogin']);
+
+
 
 
