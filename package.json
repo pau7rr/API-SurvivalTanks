@@ -8,7 +8,12 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "setup": "composer update && composer install && npm install && npm run dev && copy .env.example .env"
+        "setup": "composer update && composer install && npm install && npm run dev && copy .env.example .env",
+        "post-install-cmd": [ 
+            "php artisan clear-compiled",
+            "chmod -R 777 storage", 
+            "php artisan passport:keys"
+        ]
     },
     "devDependencies": {
         "axios": "^0.21",
