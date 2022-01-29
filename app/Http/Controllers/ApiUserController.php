@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserTank;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -162,6 +163,10 @@ class ApiUserController extends Controller
     $input = $request->all();
 
     $input['password'] = bcrypt($input['password']);
+
+    $userTank = UserTank::create(['strengh' => 1, 'health' => 1, 'speed' => 1]);
+
+    $input['user_tank_id'] = $userTank->id;
 
     $user = User::create($input);
 
