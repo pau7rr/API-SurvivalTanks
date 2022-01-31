@@ -164,7 +164,7 @@ class ApiUserController extends Controller
 
     $input['password'] = bcrypt($input['password']);
 
-    $userTank = UserTank::create(['strengh' => 1, 'health' => 1, 'speed' => 1]);
+    $userTank = UserTank::create(['strengh' => 25, 'health' => 100, 'speed' => 3]);
 
     $input['user_tank_id'] = $userTank->id;
 
