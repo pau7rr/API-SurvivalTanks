@@ -13,5 +13,9 @@ class UserTank extends Model
         'strengh',
         'health',
         'speed',
+        'tower',
+        'body',
+        'track',
+        'bullet'
     ];
 }
