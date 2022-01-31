@@ -14,7 +14,7 @@ var towerSwiper = new Swiper("#towerSwiper", {
     },
     on: {
       init: function () {
-        document.getElementById("towerInput").value = "assets/tankConstructor/TowerEdits/Light1.png";
+        document.getElementById("towerInput").value = "../assets/tankConstructor/TowerEdits/Light1.png";
       },
       slideChange: function () {
         const index_currentSlide = this.realIndex;
@@ -38,7 +38,7 @@ var hullSwiper = new Swiper("#hullSwiper", {
     },
     on: {
       init: function () {
-        document.getElementById("bodyInput").value = "assets/tankConstructor/Hulls/SmallHullA.png";
+        document.getElementById("bodyInput").value = "../assets/tankConstructor/Hulls/SmallHullA.png";
       },
       slideChange: function () {
         const index_currentSlide = this.realIndex;
@@ -62,7 +62,7 @@ var tracksSwiper = new Swiper("#tracksSwiper", {
     },
     on: {
       init: function () {
-        document.getElementById("trackInput").value = "assets/tankConstructor/Tracks/TrackAFrame1.png";
+        document.getElementById("trackInput").value = "../assets/tankConstructor/Tracks/TrackAFrame1.png";
       },
       slideChange: function () {
         const index_currentSlide = this.realIndex;
@@ -87,7 +87,7 @@ var bulletSwiper = new Swiper("#bulletSwiper", {
     },
     on: {
       init: function () {
-        document.getElementById("bulletInput").value = "assets/tankConstructor/Bullets/01.png";
+        document.getElementById("bulletInput").value = "../assets/tankConstructor/Bullets/01.png";
       },
     slideChange: function () {
         const index_currentSlide = this.realIndex;

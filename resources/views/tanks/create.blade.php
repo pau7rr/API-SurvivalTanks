@@ -39,15 +39,15 @@
                             </div>
                             <div id="towerSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
-                                    <img src="assets/tankConstructor/TowerEdits/Light1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="assets/tankConstructor/TowerEdits/Light2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="assets/tankConstructor/TowerEdits/Light3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="assets/tankConstructor/TowerEdits/Medium1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="assets/tankConstructor/TowerEdits/Medium2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="assets/tankConstructor/TowerEdits/Medium3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="assets/tankConstructor/TowerEdits/Heavy1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="assets/tankConstructor/TowerEdits/Heavy2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="assets/tankConstructor/TowerEdits/Heavy3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Light1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Light2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Light3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Medium1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Medium2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Medium3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Heavy1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Heavy2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
+                                    <img src="../assets/tankConstructor/TowerEdits/Heavy3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -58,15 +58,15 @@
                             </div>
                             <div id="hullSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
-                                    <img src="assets/tankConstructor/Hulls/SmallHullA.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
-                                    <img src="assets/tankConstructor/Hulls/SmallHullB.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
-                                    <img src="assets/tankConstructor/Hulls/SmallHullC.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
-                                    <img src="assets/tankConstructor/Hulls/MediumHullA.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
-                                    <img src="assets/tankConstructor/Hulls/MediumHullB.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
-                                    <img src="assets/tankConstructor/Hulls/MediumHullC.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
-                                    <img src="assets/tankConstructor/Hulls/HeavyHullA.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
-                                    <img src="assets/tankConstructor/Hulls/HeavyHullB.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
-                                    <img src="assets/tankConstructor/Hulls/HeavyHullC.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/SmallHullA.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/SmallHullB.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/SmallHullC.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/MediumHullA.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/MediumHullB.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/MediumHullC.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/HeavyHullA.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/HeavyHullB.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
+                                    <img src="../assets/tankConstructor/Hulls/HeavyHullC.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
                                 </div>
                                 <div class="swiper-button-prev"></div>
                                 <div class="swiper-button-next"></div>
@@ -77,10 +77,10 @@
                             </div>
                             <div id="tracksSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
-                                    <img src="assets/tankConstructor/Tracks/TrackAFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
-                                    <img src="assets/tankConstructor/Tracks/TrackBFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
-                                    <img src="assets/tankConstructor/Tracks/TrackСFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
-                                    <img src="assets/tankConstructor/Tracks/TrackDFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
+                                    <img src="../assets/tankConstructor/Tracks/TrackAFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
+                                    <img src="../assets/tankConstructor/Tracks/TrackBFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
+                                    <img src="../assets/tankConstructor/Tracks/TrackСFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
+                                    <img src="../assets/tankConstructor/Tracks/TrackDFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -91,14 +91,14 @@
                             </div>
                             <div id="bulletSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
-                                    <img src="assets/tankConstructor/Bullets/01.png" class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="assets/tankConstructor/Bullets/12.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="assets/tankConstructor/Bullets/25.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="assets/tankConstructor/Bullets/33.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="assets/tankConstructor/Bullets/45.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="assets/tankConstructor/Bullets/51.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="assets/tankConstructor/Bullets/56.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="assets/tankConstructor/Bullets/66.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../assets/tankConstructor/Bullets/01.png" class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../assets/tankConstructor/Bullets/12.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../assets/tankConstructor/Bullets/25.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../assets/tankConstructor/Bullets/33.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../assets/tankConstructor/Bullets/45.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../assets/tankConstructor/Bullets/51.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../assets/tankConstructor/Bullets/56.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../assets/tankConstructor/Bullets/66.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -138,11 +138,11 @@
                         <div class="row mx-2 p-2">
                             <div class="col-md-12 text-center h4 mx-0 mb-3 border-bottom">Preview</div>
                             <div class="imagesContainer w-100 bg-dark-4 border border-primary rounded rounded-3">
-                                <img id="bgImg" src="assets/tankConstructor/light.png" alt="light" class="bg-image">
-                                <img id="towerImg" src="assets/tankConstructor/TowerEdits/Light1.png" alt="tower" class="tower-image">
-                                <img id="hullImg" src="assets/tankConstructor/Hulls/SmallHullA.png" alt="hull" class="hull-image">
-                                <img id="trackLeftImg" src="assets/tankConstructor/Tracks/TrackAFrame1.png" alt="trackLeft" class="track-left-image">
-                                <img id="trackRightImg" src="assets/tankConstructor/Tracks/TrackAFrame1.png" alt="trackRight" class="track-right-image">
+                                <img id="bgImg" src="../assets/tankConstructor/light.png" alt="light" class="bg-image">
+                                <img id="towerImg" src="../assets/tankConstructor/TowerEdits/Light1.png" alt="tower" class="tower-image">
+                                <img id="hullImg" src="../assets/tankConstructor/Hulls/SmallHullA.png" alt="hull" class="hull-image">
+                                <img id="trackLeftImg" src="../assets/tankConstructor/Tracks/TrackAFrame1.png" alt="trackLeft" class="track-left-image">
+                                <img id="trackRightImg" src="../assets/tankConstructor/Tracks/TrackAFrame1.png" alt="trackRight" class="track-right-image">
                             </div>
                         </div>
                     </div>
