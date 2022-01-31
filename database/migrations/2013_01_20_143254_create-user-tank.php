@@ -18,6 +18,10 @@ class CreateUserTank extends Migration
             $table->integer('strengh');
             $table->integer('health');
             $table->integer('speed');
+            $table->string('tower', 255);
+            $table->string('body', 255);
+            $table->string('track', 255);
+            $table->string('bullet', 255);
             $table->timestamps();
         });
     }

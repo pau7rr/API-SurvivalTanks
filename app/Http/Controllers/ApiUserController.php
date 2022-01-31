@@ -18,8 +18,7 @@ class ApiUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         //
     }
 
@@ -28,8 +27,7 @@ class ApiUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         //
     }
 
@@ -46,38 +44,37 @@ class ApiUserController extends Controller
     }
 
     public function login() {
+      if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
 
-    if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+        $user = Auth::user();
 
-      $user = Auth::user();
+        $success['token'] = $user->createToken('appToken')->accessToken;
 
-      $success['token'] = $user->createToken('appToken')->accessToken;
+        //After successfull authentication, notice how I return json parameters
 
-      //After successfull authentication, notice how I return json parameters
+        return response()->json([
+
+        'success' => true,
+
+        'token' => $success,
+
+        'user' => $user
+
+      ]);
+
+      } else {
+
+      //if authentication is unsuccessfull, notice how I return json parameters
 
       return response()->json([
 
-       'success' => true,
+        'success' => false,
 
-       'token' => $success,
+        'message' => 'Invalid Email or Password',
 
-       'user' => $user
+      ], 401);
 
-     ]);
-
-    } else {
-
-    //if authentication is unsuccessfull, notice how I return json parameters
-
-     return response()->json([
-
-      'success' => false,
-
-      'message' => 'Invalid Email or Password',
-
-    ], 401);
-
-    }
+      }
 
   }
 
@@ -298,7 +295,6 @@ class ApiUserController extends Controller
 
   }
 
-
   public function logout(Request $res){
 
    if (Auth::user()) {
@@ -327,6 +323,10 @@ class ApiUserController extends Controller
 
    }
 
+  }
+
+  public function tank(Request $request) {
+    return UserTank::find($request->user_tank_id);
   }
 
     /**
