@@ -162,10 +162,10 @@ class ApiUserController extends Controller
     $input['password'] = bcrypt($input['password']);
 
     $userTank = UserTank::create(['strengh' => 25, 'health' => 100, 'speed' => 3, 
-    'tower' => '/assets/tankConstructor/TowerEdits/Light1.png', 
-    'body' => '/assets/tankConstructor/Hulls/SmallHullA.png', 
-    'track' => '/assets/tankConstructor/Tracks/TrackAFrame1.png', 
-    'bullet' => '/assets/tankConstructor/Bullets/01.png']);
+    'tower' => '../assets/tankConstructor/TowerEdits/Light1.png', 
+    'body' => '../assets/tankConstructor/Hulls/SmallHullA.png', 
+    'track' => '../assets/tankConstructor/Tracks/TrackAFrame1.png', 
+    'bullet' => '../assets/tankConstructor/Bullets/01.png']);
 
     $input['user_tank_id'] = $userTank->id;
 
