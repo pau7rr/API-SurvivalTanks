@@ -329,10 +329,6 @@ class ApiUserController extends Controller
 
   }
 
-  public function tank(Request $request) {
-    return UserTank::find($request->user_tank_id);
-  }
-
     /**
      * Display the specified resource.
      *

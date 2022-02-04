@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApiDevlogController;
 use App\Http\Controllers\ApiUserController;
+use App\Http\Controllers\ApiUserTankController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('devlogs', [ApiDevlogController::class, 'index']);
 
-Route::post('users', [ApiUserController::class, 'store']);
+//Route::post('users', [ApiUserController::class, 'store']);
 
 Route::post('/login', [ApiUserController::class, 'login']);
 
@@ -35,6 +36,6 @@ Route::post('sociallogin/{provider}', [ApiUserController::class, 'socialsignup']
 
 Route::post('sociallogin', [ApiUserController::class, 'socialLogin']);
 
-Route::post('/usertank', [ApiUserController::class, 'tank']);
+Route::post('/usertank', [ApiUserTankController::class, 'getUserTank']);
 
 
