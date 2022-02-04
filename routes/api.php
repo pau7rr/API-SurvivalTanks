@@ -37,5 +37,3 @@ Route::post('sociallogin/{provider}', [ApiUserController::class, 'socialsignup']
 Route::post('sociallogin', [ApiUserController::class, 'socialLogin']);
 
 Route::post('/usertank', [ApiUserTankController::class, 'getUserTank']);
-
-
