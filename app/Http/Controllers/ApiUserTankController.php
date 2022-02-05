@@ -35,4 +35,16 @@ class ApiUserTankController extends Controller
         return response()->json($userTank);
        
     }
+    
+    public function sumSpeed(Request $request) {
+        
+        $userTank = UserTank::where('id', $request->user_tank_id)->first();
+
+        $newSpeed = $userTank->speed + 10;
+
+        $userTank->update(['speed' => $newSpeed]);
+       
+        return response()->json($userTank);
+       
+    }
 }
