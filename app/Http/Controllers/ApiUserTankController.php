@@ -23,4 +23,16 @@ class ApiUserTankController extends Controller
         return response()->json($userTank);
        
     }
+    
+    public function sumHealth(Request $request) {
+        
+        $userTank = UserTank::where('id', $request->user_tank_id)->first();
+
+        $newHealth = $userTank->health + 10;
+
+        $userTank->update(['health' => $newHealth]);
+       
+        return response()->json($userTank);
+       
+    }
 }

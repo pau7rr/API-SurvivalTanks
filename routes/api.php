@@ -39,3 +39,5 @@ Route::post('sociallogin', [ApiUserController::class, 'socialLogin']);
 Route::post('/usertank', [ApiUserTankController::class, 'getUserTank']);
 
 Route::post('/sumStrength', [ApiUserTankController::class, 'sumStrength']);
+
+Route::post('/sumHealth', [ApiUserTankController::class, 'sumHealth']);
