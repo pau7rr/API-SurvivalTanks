@@ -21,8 +21,6 @@ class ApiUserTankController extends Controller
         $userTank->update(['strengh' => $newStrength]);
        
         return response()->json($userTank);
-       // ->update(['strengh' => 10]);
-
-        //dd($userTank);
+       
     }
 }
