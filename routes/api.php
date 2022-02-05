@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApiDevlogController;
 use App\Http\Controllers\ApiUserController;
+use App\Http\Controllers\ApiUserTankController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('devlogs', [ApiDevlogController::class, 'index']);
-
-Route::post('users', [ApiUserController::class, 'store']);
+// User Endpoints
 
 Route::post('/login', [ApiUserController::class, 'login']);
 
@@ -35,6 +34,16 @@ Route::post('sociallogin/{provider}', [ApiUserController::class, 'socialsignup']
 
 Route::post('sociallogin', [ApiUserController::class, 'socialLogin']);
 
-Route::post('/usertank', [ApiUserController::class, 'tank']);
+// Devlogs Endpoints
 
+Route::get('devlogs', [ApiDevlogController::class, 'index']);
 
+// UserTank Endpoints
+
+Route::post('/usertank', [ApiUserTankController::class, 'getUserTank']);
+
+Route::put('/sumStrength', [ApiUserTankController::class, 'sumStrength']);
+
+Route::put('/sumHealth', [ApiUserTankController::class, 'sumHealth']);
+
+Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed']);
