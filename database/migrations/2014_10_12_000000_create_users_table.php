@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->unsignedBigInteger('user_tank_id')->nullable();
             $table->foreign('user_tank_id')->references('id')->on('user_tanks');
+            $table->integer('coins');
             $table->rememberToken();
             $table->timestamps();
         });

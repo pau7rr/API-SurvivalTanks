@@ -107,6 +107,8 @@ class ApiUserController extends Controller
 
     $input['user_tank_id'] = $userTank->id;
 
+    $input['coins'] = 0;
+
     $user = User::create($input);
 
     $success['token'] = $user->createToken('appToken')->accessToken;
@@ -158,6 +160,8 @@ class ApiUserController extends Controller
     'bullet' => '../assets/tankConstructor/Bullets/01.png']);
 
     $input['user_tank_id'] = $userTank->id;
+
+    $input['coins'] = 0;
 
     $user = User::create($input);
 
