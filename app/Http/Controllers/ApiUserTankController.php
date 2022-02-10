@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class ApiUserTankController extends Controller
 {
     public function getUserTank(Request $request) {
+        
         return UserTank::find($request->user_tank_id);
     }
 
@@ -16,7 +17,7 @@ class ApiUserTankController extends Controller
         
         $userTank = UserTank::where('id', $request->user_tank_id)->first();
 
-        $newStrength = $userTank->strengh + 10;
+        $newStrength = $userTank->strengh + 5;
 
         $userTank->update(['strengh' => $newStrength]);
        
@@ -40,7 +41,7 @@ class ApiUserTankController extends Controller
         
         $userTank = UserTank::where('id', $request->user_tank_id)->first();
 
-        $newSpeed = $userTank->speed + 10;
+        $newSpeed = $userTank->speed + 1;
 
         $userTank->update(['speed' => $newSpeed]);
        
