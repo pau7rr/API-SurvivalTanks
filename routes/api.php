@@ -34,6 +34,8 @@ Route::post('sociallogin/{provider}', [ApiUserController::class, 'socialsignup']
 
 Route::post('sociallogin', [ApiUserController::class, 'socialLogin']);
 
+Route::get('user/coins', [ApiUserController::class, 'getCoins'])->middleware('auth:api');
+
 // Devlogs Endpoints
 
 Route::get('devlogs', [ApiDevlogController::class, 'index']);

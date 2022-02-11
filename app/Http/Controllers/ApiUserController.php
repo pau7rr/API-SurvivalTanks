@@ -323,4 +323,28 @@ class ApiUserController extends Controller
 
   }
 
+  public function getCoins() {
+
+    if (Auth::user()) {
+
+      $userId = Auth::id();
+
+      $user = User::all()->where('id', $userId)->first();
+
+      return response()->json($user->coins);
+    
+    } else {
+
+      return response()->json([
+
+        'success' => false,
+
+        'message' => 'Unable to get coins'
+
+      ]);
+
+    }
+   
+  }
+
 }
