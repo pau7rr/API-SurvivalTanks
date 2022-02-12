@@ -2,15 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\UserTank;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class ApiUserTankController extends Controller
 {
-    public function getUserTank(Request $request) {
+    public function getUserTank() {
+
+        if (Auth::user()) {
+
+            $userId = Auth::id();
+            
+            $user = User::all()->where('id', $userId)->first();
+
+            return UserTank::find($user->user_tank_id);
+          
+        } else {
+      
+            return response()->json([
+      
+              'success' => false,
+      
+              'message' => 'Unable to get User Tanks'
+      
+            ]);
+      
+          }
         
-        return UserTank::find($request->user_tank_id);
     }
 
     public function sumStrength(Request $request) {

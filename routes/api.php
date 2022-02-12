@@ -38,13 +38,15 @@ Route::get('user/coins', [ApiUserController::class, 'getCoins'])->middleware('au
 
 Route::put('user/addCoins', [ApiUserController::class, 'addCoins'])->middleware('auth:api');
 
+Route::put('user/resCoins', [ApiUserController::class, 'resCoins'])->middleware('auth:api');
+
 // Devlogs Endpoints
 
 Route::get('devlogs', [ApiDevlogController::class, 'index']);
 
 // UserTank Endpoints
 
-Route::post('/usertank', [ApiUserTankController::class, 'getUserTank']);
+Route::get('/usertank', [ApiUserTankController::class, 'getUserTank'])->middleware('auth:api');
 
 Route::put('/sumStrength', [ApiUserTankController::class, 'sumStrength']);
 
