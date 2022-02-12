@@ -347,4 +347,32 @@ class ApiUserController extends Controller
    
   }
 
+  public function addCoins(Request $request) {
+
+    if (Auth::user()) {
+
+      $userId = Auth::id();
+
+      $user = User::all()->where('id', $userId)->first();
+
+      $newCoins = $user->coins + $request->coins;
+
+      $user->update(['coins' => $newCoins]);
+
+      return response()->json($user);
+    
+    } else {
+
+      return response()->json([
+
+        'success' => false,
+
+        'message' => 'Unable to add coins'
+
+      ]);
+
+    }
+
+  }
+
 }
