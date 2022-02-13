@@ -48,8 +48,8 @@ Route::get('devlogs', [ApiDevlogController::class, 'index']);
 
 Route::get('/usertank', [ApiUserTankController::class, 'getUserTank'])->middleware('auth:api');
 
-Route::put('/sumStrength', [ApiUserTankController::class, 'sumStrength']);
+Route::put('/sumStrength', [ApiUserTankController::class, 'sumStrength'])->middleware('auth:api');
 
-Route::put('/sumHealth', [ApiUserTankController::class, 'sumHealth']);
+Route::put('/sumHealth', [ApiUserTankController::class, 'sumHealth'])->middleware('auth:api');
 
-Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed']);
+Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed'])->middleware('auth:api');

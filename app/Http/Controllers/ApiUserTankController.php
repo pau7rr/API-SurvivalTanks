@@ -35,39 +35,90 @@ class ApiUserTankController extends Controller
         
     }
 
-    public function sumStrength(Request $request) {
-        
-        $userTank = UserTank::where('id', $request->user_tank_id)->first();
+    public function sumStrength() {
 
-        $newStrength = $userTank->strengh + 5;
+        if (Auth::user()) {
 
-        $userTank->update(['strengh' => $newStrength]);
-       
-        return response()->json($userTank);
-       
+            $userId = Auth::id();
+            
+            $user = User::all()->where('id', $userId)->first();
+
+            $userTank = UserTank::find($user->user_tank_id);
+
+            $newStrength = $userTank->strengh + 5;
+
+            $userTank->update(['strengh' => $newStrength]);
+           
+            return response()->json($userTank);
+          
+        } else {
+      
+            return response()->json([
+      
+              'success' => false,
+      
+              'message' => 'Unable to sum strengt'
+      
+            ]);
+      
+        } 
     }
     
-    public function sumHealth(Request $request) {
-        
-        $userTank = UserTank::where('id', $request->user_tank_id)->first();
+    public function sumHealth() {
 
-        $newHealth = $userTank->health + 10;
+        if (Auth::user()) {
 
-        $userTank->update(['health' => $newHealth]);
-       
-        return response()->json($userTank);
-       
+            $userId = Auth::id();
+            
+            $user = User::all()->where('id', $userId)->first();
+
+            $userTank = UserTank::find($user->user_tank_id);
+
+            $newHealth = $userTank->health + 10;
+
+            $userTank->update(['health' => $newHealth]);
+           
+            return response()->json($userTank);
+          
+        } else {
+      
+            return response()->json([
+      
+              'success' => false,
+      
+              'message' => 'Unable to sum health'
+      
+            ]);
+      
+        }
     }
     
-    public function sumSpeed(Request $request) {
-        
-        $userTank = UserTank::where('id', $request->user_tank_id)->first();
+    public function sumSpeed() {
 
-        $newSpeed = $userTank->speed + 1;
+        if (Auth::user()) {
 
-        $userTank->update(['speed' => $newSpeed]);
-       
-        return response()->json($userTank);
-       
+            $userId = Auth::id();
+            
+            $user = User::all()->where('id', $userId)->first();
+
+            $userTank = UserTank::find($user->user_tank_id);
+
+            $newSpeed = $userTank->speed + 1;
+
+            $userTank->update(['speed' => $newSpeed]);
+           
+            return response()->json($userTank);
+          
+        } else {
+      
+            return response()->json([
+      
+              'success' => false,
+      
+              'message' => 'Unable to sum strengt'
+      
+            ]);
+      
+        }
     }
 }
