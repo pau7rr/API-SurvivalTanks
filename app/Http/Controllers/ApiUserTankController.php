@@ -115,7 +115,7 @@ class ApiUserTankController extends Controller
       
               'success' => false,
       
-              'message' => 'Unable to sum strengt'
+              'message' => 'Unable to sum speed'
       
             ]);
       
