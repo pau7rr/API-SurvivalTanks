@@ -7,19 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevLogs</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <!-- Styles -->
     @livewireStyles
     @livewire('style-imports')
-
-    <style>
-
-    </style>
-
 </head>
 
-<body class="bg-light">
+<body class="bg-light bg-dark-black">
 
     @livewire('navbar')
 
@@ -86,3 +80,4 @@
         $('#datatable').DataTable();
     });
 </script>
+@livewireScripts

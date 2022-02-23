@@ -16,7 +16,7 @@
         @livewire('style-imports')
         <link href="{{ asset('css/cube.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body class="bg-dark-blue">
         <div class="container mt-5">
             <div class="row mb-5">
                 <div class="col-md-1"></div>
@@ -45,12 +45,12 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Username</label>
-                            <input type="text" class="form-control bg-dark" name="username" placeholder="Enter username" value="{{ old('username') }}">
+                            <input type="text" class="form-control bg-dark input-text-white" name="username" placeholder="Enter username" value="{{ old('username') }}">
                             <span class="text-danger">@error('username') {{ $message }} @enderror</span>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control bg-dark" name="password" placeholder="Enter password">
+                            <input type="password" class="form-control bg-dark input-text-white" name="password" placeholder="Enter password">
                             <span class="text-danger">@error('password') {{ $message }} @enderror</span>
                         </div>
                         <div class="form-group">

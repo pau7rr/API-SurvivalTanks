@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create DevLog</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Styles -->
+    @livewireStyles
+    @livewire('style-imports')
 </head>
 
-<body class="p-5">
+<body class="p-5 bg-dark-black">
 <div class="mb-4" >
         <div class="">
             <div class="">
@@ -39,49 +41,49 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Title:</strong>
-                <input type="text" name="title" class="form-control" placeholder="Title">
+                <input type="text" name="title" class="form-control bg-dark input-text-white" placeholder="Title">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Slug:</strong>
-                <input type="text" name="slug" class="form-control" placeholder="Slug">
+                <input type="text" name="slug" class="form-control bg-dark input-text-white" placeholder="Slug">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Version:</strong>
-                <input type="text" name="version" class="form-control" placeholder="Version">
+                <input type="text" name="version" class="form-control bg-dark input-text-white" placeholder="Version">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Summary:</strong>
-                <textarea class="form-control" style="height:150px" name="summary" placeholder="Summary"></textarea>
+                <textarea class="form-control bg-dark input-text-white" style="height:150px" name="summary" placeholder="Summary"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Content:</strong>
-                <textarea class="form-control" style="height:150px" name="content" placeholder="Content"></textarea>
+                <textarea class="form-control bg-dark input-text-white" style="height:150px" name="content" placeholder="Content"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Publication Date:</strong>
-                <input type="text" name="publication_date" class="form-control" placeholder="Publication Date">
+                <input type="text" name="publication_date" class="form-control bg-dark input-text-white" placeholder="Publication Date">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Thumbnail:</strong>
-                <input type="text" name="thumbnail_url" class="form-control" placeholder="Thumbnail">
+                <input type="text" name="thumbnail_url" class="form-control bg-dark input-text-white" placeholder="Thumbnail">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Image:</strong>
-                <input type="text" name="image_url" class="form-control" placeholder="Image">
+                <input type="text" name="image_url" class="form-control bg-dark input-text-white" placeholder="Image">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -92,3 +94,4 @@
 </form>
 </body>
 </html>
+@livewireScripts

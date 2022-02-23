@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
 /*Colors*/
+.bg-dark-black {
+    background-color:rgb(22, 22, 22)
+}
 .bg-dark-blue {
     background-color: rgb(10, 27, 43);
 }
@@ -33,6 +36,10 @@ body {
     font-size: 16vh;
     font-family: 'Black Ops One';
     filter:blur(0.5px);
+}
+
+.input-text-white {
+    color: white !important;
 }
 
 

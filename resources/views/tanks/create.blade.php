@@ -12,7 +12,7 @@
     <link href="{{ asset('css/tankEditor.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
-<body>
+<body class="bg-dark-black">
     @livewire('navbar')
     <div class="container mb-5">
         <!-- Errors Return -->

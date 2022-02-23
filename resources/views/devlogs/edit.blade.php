@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevLogs</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Styles -->
+    @livewireStyles
+    @livewire('style-imports')
 </head>
 
-<body class="p-5">
+<body class="p-5 bg-dark-black">
 <div class="mb-4" >
         <div class="">
             <div class="">
@@ -98,3 +100,4 @@
     </form>
 </body>
 </html>
+@livewireScripts
