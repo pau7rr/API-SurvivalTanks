@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserTank extends Migration
+class CreateUserTankTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUserTank extends Migration
      */
     public function up()
     {
-        Schema::create('user_tanks', function (Blueprint $table) {
+        Schema::create('user_tank', function (Blueprint $table) {
             $table->id();
             $table->integer('strengh');
             $table->integer('health');
@@ -33,6 +33,6 @@ class CreateUserTank extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_tanks');
+        Schema::dropIfExists('user_tank');
     }
 }
