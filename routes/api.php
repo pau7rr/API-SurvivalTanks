@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// User Endpoints
+/*******  User Endpoints *******/
 
 Route::post('/login', [ApiUserController::class, 'login']);
 
@@ -40,11 +40,11 @@ Route::put('user/addCoins', [ApiUserController::class, 'addCoins'])->middleware(
 
 Route::put('user/resCoins', [ApiUserController::class, 'resCoins'])->middleware('auth:api');
 
-// Devlogs Endpoints
+/*******  Devlog Endpoints *******/
 
 Route::get('devlogs', [ApiDevlogController::class, 'index']);
 
-// UserTank Endpoints
+/*******  UserTank Endpoints *******/
 
 Route::get('/usertank', [ApiUserTankController::class, 'getUserTank'])->middleware('auth:api');
 
@@ -53,3 +53,8 @@ Route::put('/sumStrength', [ApiUserTankController::class, 'sumStrength'])->middl
 Route::put('/sumHealth', [ApiUserTankController::class, 'sumHealth'])->middleware('auth:api');
 
 Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed'])->middleware('auth:api');
+
+/*******  User Stats Endpoints *******/
+
+//solo_stats
+//mulitplayer_stats
