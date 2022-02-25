@@ -20,6 +20,9 @@ class CreateSoloStatsTable extends Migration
             $table->integer('games');
             $table->integer('highest_round');
             $table->integer('kills');
+            $table->integer('time_played');
+            $table->integer('shots');
+            $table->integer('successful_shots');
             $table->timestamps();
         });
     }
