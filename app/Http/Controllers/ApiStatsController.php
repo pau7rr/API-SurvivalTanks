@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Models\SoloStats;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 
 class ApiStatsController extends Controller
 {
     public function updateSoloStats(Request $request) {
-        $this->validate($request, [
+        
+
+        $validator = Validator::make($request->all(), [
             'user_id' => 'required|integer',
             'round' => 'required|integer',
             'kills' => 'required|integer',
@@ -16,6 +19,13 @@ class ApiStatsController extends Controller
             'shots' => 'required|integer',
             'successful_shots' => 'required|integer',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'message' => $validator->errors(),
+            ], 401);
+        }
         
         $soloStats = SoloStats::find($request->user_id);
         $soloStats->games += 1;
