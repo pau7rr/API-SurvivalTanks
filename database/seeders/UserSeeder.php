@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
                 'name' => 'argos16',
                 'email' => Str::random(10).'@gmail.com',
                 'password' => Hash::make('1234'),
+                'user_tank_id' => 1,
                 'coins' => 10,
             ]            
         );
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
                 'name' => 'honrixxx',
                 'email' => Str::random(10).'@gmail.com',
                 'password' => Hash::make('1234'),
+                'user_tank_id' => 2,
                 'coins' => 10,
             ]            
         );
@@ -37,6 +39,7 @@ class UserSeeder extends Seeder
                 'name' => 'pablaso69',
                 'email' => Str::random(10).'@gmail.com',
                 'password' => Hash::make('1234'),
+                'user_tank_id' => 3,
                 'coins' => 10,
             ]            
         );
@@ -45,6 +48,7 @@ class UserSeeder extends Seeder
                 'name' => 'sualejandro19',
                 'email' => Str::random(10).'@gmail.com',
                 'password' => Hash::make('1234'),
+                'user_tank_id' => 4,
                 'coins' => 10,
             ]            
         );
