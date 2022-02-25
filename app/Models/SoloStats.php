@@ -15,6 +15,7 @@ class SoloStats extends Model
         'highest_round',
         'kills',
         'time_played',
-        'aim',
+        'shots',
+        'successful_shots',
     ];
 }
