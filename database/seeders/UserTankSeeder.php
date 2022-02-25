@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+use App\Models\UserTank;
 
 use Illuminate\Database\Seeder;
 
