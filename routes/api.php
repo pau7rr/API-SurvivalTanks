@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiDevlogController;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ApiUserTankController;
+use App\Http\Controllers\ApiStatsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -56,5 +57,6 @@ Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed'])->middleware(
 
 /*******  User Stats Endpoints *******/
 
-//solo_stats
-//mulitplayer_stats
+Route::put('/updateSoloStats', [ApiStatsController::class, 'updateSoloStats']);
+
+Route::put('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultiplayerStats'])->middleware('auth:api');
