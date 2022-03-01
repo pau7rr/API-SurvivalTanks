@@ -59,4 +59,4 @@ Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed'])->middleware(
 
 Route::put('/updateSoloStats', [ApiStatsController::class, 'updateSoloStats']);
 
-Route::put('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultiplayerStats'])->middleware('auth:api');
+Route::put('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultiplayerStats']);
