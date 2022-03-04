@@ -18,6 +18,8 @@ class CreateMultiplayerStatsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('games');
+            $table->integer('wins');
+            $table->integer('loses');
             $table->integer('kills');
             $table->integer('deaths');
             $table->timestamps();

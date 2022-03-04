@@ -48,6 +48,7 @@ class ApiStatsController extends Controller
 
         $validator = Validator::make($request->all(), [
             'user_id' => 'required|integer',
+            'win' => 'required|boolean',
             'kills' => 'required|integer',
             'deaths' => 'required|integer',
             'time_played' => 'required|integer',
@@ -63,13 +64,17 @@ class ApiStatsController extends Controller
         }
         
         $multiplayerStats = MultiplayerStats::find($request->user_id);
-        dd($multiplayerStats);
         $multiplayerStats->games += 1;
         $multiplayerStats->kills += $request->kills;
         $multiplayerStats->deaths += $request->deaths;
         $multiplayerStats->time_played += $request->time_played;
         $multiplayerStats->shots += $request->shots;
         $multiplayerStats->successful_shots += $request->successful_shots;
+        if ($request->win) {
+            $multiplayerStats->wins += 1;
+        } else {
+            $multiplayerStats->loses += 1;
+        }
 
         
         
