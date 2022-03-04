@@ -37,7 +37,7 @@ Route::post('sociallogin', [ApiUserController::class, 'socialLogin']);
 
 Route::get('user/coins', [ApiUserController::class, 'getCoins'])->middleware('auth:api');
 
-Route::put('user/addCoins', [ApiUserController::class, 'addCoins'])->middleware('auth:api');
+Route::post('user/addCoins', [ApiUserController::class, 'addCoins'])->middleware('auth:api');
 
 Route::put('user/resCoins', [ApiUserController::class, 'resCoins'])->middleware('auth:api');
 
