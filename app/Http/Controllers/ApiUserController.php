@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ResetPassword;
 use App\Models\User;
 use App\Models\UserTank;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 use Socialite;
@@ -163,8 +165,10 @@ class ApiUserController extends Controller
 
     $input['coins'] = 0;
 
-    $user = User::create($input);
+    $input['token'] = generateRandomString(10);
 
+    $user = User::create($input);
+    
     $success['token'] = $user->createToken('appToken')->accessToken;
 
     return response()->json([
@@ -401,4 +405,41 @@ class ApiUserController extends Controller
     }
   }
 
+  public function sendResetPasswordEmail(Request $request) {
+
+    $user = User::where('email', $request->email)->first();
+
+    if ($user) {
+
+      $url = "https://survival-tanks.herokuapp.com/reset-password/" . $user->token;
+
+      $mailable = new ResetPassword($url);
+      Mail::to($request->email)->send($mailable);
+      return;
+
+    }
+
+    return response()->json([
+
+      'success' => false,
+
+      'message' => 'Unable to send email'
+
+    ]);
+
+    
+  }
+
+  public function resetPassword(Request $request) {
+
+    $user = User::where('token', $request->token)->first();
+    
+    $user->update(['password' => bcrypt($request->password)]);
+
+  }
+
+}
+
+function generateRandomString($length = 10) {
+  return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
 }
