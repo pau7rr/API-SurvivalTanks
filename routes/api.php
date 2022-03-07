@@ -41,6 +41,10 @@ Route::put('user/addCoins', [ApiUserController::class, 'addCoins'])->middleware(
 
 Route::put('user/resCoins', [ApiUserController::class, 'resCoins'])->middleware('auth:api');
 
+Route::post('user/send-reset-email', [ApiUserController::class, 'sendResetPasswordEmail']);
+
+Route::post('user/reset-password', [ApiUserController::class, 'resetPassword']);
+
 /*******  Devlog Endpoints *******/
 
 Route::get('devlogs', [ApiDevlogController::class, 'index']);
