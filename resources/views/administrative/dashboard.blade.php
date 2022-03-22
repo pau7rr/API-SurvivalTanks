@@ -13,7 +13,7 @@
     
     
 </head>
-<body class="bg-dark-black">
+<body class="bg-dark-black text-light-color">
     @livewire('navbar')
     <!-- Title -->
     <div class="container">
