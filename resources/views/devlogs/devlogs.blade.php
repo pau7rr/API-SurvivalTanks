@@ -30,7 +30,7 @@
 
     <div class="container my-5">
         <div class="d-flex flex-row-reverse my-3">
-            <a class="btn btn-success" href="{{ route('devlogs.create') }}"> Create New Devlog</a>
+            <a class="btn btn-success" href="{{ route('devlogs.create') }}"> New Devlog</a>
         </div>
         <div class=" bg-dark-6 shadow-light-1 p-3 ">
             <table id="datatable" class="table table-striped text-light-color">
