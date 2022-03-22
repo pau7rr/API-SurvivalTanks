@@ -10,11 +10,11 @@
     @livewireStyles
     @livewire('style-imports')
 </head>
-<body>
+<body class="bg-dark-black text-light-color">
     @livewire('navbar')
     
     <!-- Tanks List -->
-    <div class="container mb-5">
+    <div class="container my-5">
         <!-- Errors Return -->
         <div class="results mt-3">
             @if(Session::get('fail'))
@@ -22,12 +22,14 @@
                     {{ Session::get('fail') }}
                 </div>
             @endif
-        </div> 
-        <div class="row bg-dark-1 shadow p-4 rounded rounded-5">
-            <table id="datatable" class="table table-sm text-center bg-dark-2">
-                <div class="d-flex flex-row-reverse">
-                    <a id="createButton" href="{{ url('/tanks/create') }}" class="btn p-1"><img src="https://img.icons8.com/material-outlined/24/ffffff/plus--v1.png" alt="plus" style="max-width: 25px;"></a>
-                </div>
+        </div>
+        <!-- Create Btn -->
+        <div class="d-flex flex-row my-3">
+            <a id="createButton" class="btn btn-success" href="{{ url('/tanks/create') }}"> New Tank</a>
+        </div>
+        <!-- Table -->
+        <div class="row bg-dark-6 pt-3 px-3 pb-0 rounded rounded-5 shadow-light-1">
+            <table id="datatable" class="table text-light-color table-sm text-center">
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -45,14 +47,14 @@
                     <!-- Loop for each Tank -->
                     @foreach($tanks as $tank)
                         <tr>
-                            <td class="bg-dark-2">{{ $tank->id }}</td>
-                            <td class="bg-dark-3">{{ $tank->strengh }}</td>
-                            <td class="bg-dark-4">{{ $tank->health }}</td>
-                            <td class="bg-dark-5">{{ $tank->speed }}</td>
-                            <td class="bg-dark-6"><img src="{{ $tank->tower }}" style="max-width: 4rem;"></td>
-                            <td class="bg-dark-7"><img src="{{ $tank->body }}" style="max-width: 4rem;"></td>
-                            <td class="bg-dark-8"><img src="{{ $tank->track }}" style="max-width: 4rem;"></td>
-                            <td class="bg-dark-9"><img src="{{ $tank->bullet }}" style="max-width: 4rem;"></td>
+                            <td class="">{{ $tank->id }}</td>
+                            <td class="">{{ $tank->strengh }}</td>
+                            <td class="">{{ $tank->health }}</td>
+                            <td class="">{{ $tank->speed }}</td>
+                            <td class=""><img src="{{ $tank->tower }}" style="max-width: 4rem;"></td>
+                            <td class=""><img src="{{ $tank->body }}" style="max-width: 4rem;"></td>
+                            <td class=""><img src="{{ $tank->track }}" style="max-width: 4rem;"></td>
+                            <td class=""><img src="{{ $tank->bullet }}" style="max-width: 4rem;"></td>
                             <td class="flex flex-column justify-content-sm-around py-2 px-0 m-0">
                                 <a id="updateBtn" href="{{ url('/tanks/' . $tank->id . '/edit') }}" class="mb-2 py-0 px-1 btn btn-default btn-block"><img src="https://img.icons8.com/windows/32/ffffff/edit--v1.png" alt="Edit Button" style="max-width: 20px;"></a>
                                 <form action="{{ url('/tanks/' . $tank->id) }}" method="POST">

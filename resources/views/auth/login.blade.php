@@ -16,10 +16,11 @@
         @livewire('style-imports')
         <link href="{{ asset('css/cube.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body class="bg-dark-black">
         <div class="container mt-5">
             <div class="row mb-5">
                 <div class="col-md-1"></div>
+                <!-- Cube -->
                 <div class="col-12 cube-col col-sm-12 col-md-4">
                     <div class="cube">
                         <div class="top"></div>
@@ -31,8 +32,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- Login -->
                 <div class="col-12 col-sm-12 col-md-6">
-                    <!-- Login -->
                     <h4>Admin Login</h4>
                     <form action="{{ route('auth.check') }}" method="post">
                     @csrf
@@ -45,12 +46,12 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Username</label>
-                            <input type="text" class="form-control bg-dark" name="username" placeholder="Enter username" value="{{ old('username') }}">
+                            <input type="text" class="form-control bg-dark input-text-white" name="username" placeholder="Enter username" value="{{ old('username') }}">
                             <span class="text-danger">@error('username') {{ $message }} @enderror</span>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control bg-dark" name="password" placeholder="Enter password">
+                            <input type="password" class="form-control bg-dark input-text-white" name="password" placeholder="Enter password">
                             <span class="text-danger">@error('password') {{ $message }} @enderror</span>
                         </div>
                         <div class="form-group">

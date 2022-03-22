@@ -9,11 +9,10 @@
 
     
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/general.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    @livewireStyles
+    @livewire('style-imports')
 </head>
-<body>
+<body class="bg-dark-black">
     
     @livewire('navbar')
     <!-- Title -->
@@ -33,3 +32,4 @@
 
 </body>
 </html>
+@livewireScripts
