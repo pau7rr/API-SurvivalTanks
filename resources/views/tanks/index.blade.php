@@ -23,11 +23,12 @@
                 </div>
             @endif
         </div>
-        
+        <!-- Create Btn -->
         <div class="d-flex flex-row my-3">
             <a id="createButton" class="btn btn-success" href="{{ url('/tanks/create') }}"> New Tank</a>
         </div>
-        <div class="row bg-dark-6 p-3 rounded rounded-5 shadow-light-1">
+        <!-- Table -->
+        <div class="row bg-dark-6 pt-3 px-3 pb-0 rounded rounded-5 shadow-light-1">
             <table id="datatable" class="table text-light-color table-sm text-center">
                 <thead>
                     <tr>
