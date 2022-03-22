@@ -3,9 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
-/*Colors*/
+/*Font Colors*/
+.text-light-color {
+    color: #d6d6d6;
+}
+.input-text-white {
+    color: white !important;
+}
+
+/*Background Colors*/
 .bg-dark-black {
-    background-color:rgb(22, 22, 22)
+    background-color:rgb(22, 22, 22);
 }
 .bg-dark-blue {
     background-color: rgb(10, 27, 43);
@@ -13,23 +21,32 @@
 .bg-dark-green {
     background: rgb(34, 104, 23);
 }
-.bg-dark-0 {background: rgba(242, 242, 242, 0.05);}
-.bg-dark-1 {background: rgba(242, 242, 242, 0.1);}
-.bg-dark-2 {background: rgba(242, 242, 242, 0.2);}
-.bg-dark-3 {background: rgba(242, 242, 242, 0.3);}
-.bg-dark-4 {background: rgba(242, 242, 242, 0.4);}
-.bg-dark-5 {background: rgba(242, 242, 242, 0.5);}
-.bg-dark-6 {background: rgba(242, 242, 242, 0.6);}
-.bg-dark-7 {background: rgba(242, 242, 242, 0.7);}
-.bg-dark-8 {background: rgba(242, 242, 242, 0.8);}
-.bg-dark-9 {background: rgba(242, 242, 242, 0.9);}
+.bg-light-0 {background: rgba(242, 242, 242, 0.05);}
+.bg-light-1 {background: rgba(242, 242, 242, 0.1);}
+.bg-light-2 {background: rgba(242, 242, 242, 0.2);}
+.bg-light-3 {background: rgba(242, 242, 242, 0.3);}
+.bg-light-4 {background: rgba(242, 242, 242, 0.4);}
+.bg-light-5 {background: rgba(242, 242, 242, 0.5);}
+.bg-light-6 {background: rgba(242, 242, 242, 0.6);}
+.bg-light-7 {background: rgba(242, 242, 242, 0.7);}
+.bg-light-8 {background: rgba(242, 242, 242, 0.8);}
+.bg-light-9 {background: rgba(242, 242, 242, 0.9);}
+
+.bg-dark-0 {background: rgba(24, 24, 24, 0.05);}
+.bg-dark-1 {background: rgba(24, 24, 24, 0.1);}
+.bg-dark-2 {background: rgba(24, 24, 24, 0.2);}
+.bg-dark-3 {background: rgba(24, 24, 24, 0.3);}
+.bg-dark-4 {background: rgba(24, 24, 24, 0.4);}
+.bg-dark-5 {background: rgba(24, 24, 24, 0.5);}
+.bg-dark-6 {background: rgba(24, 24, 24, 0.6);}
+.bg-dark-7 {background: rgba(24, 24, 24, 0.7);}
+.bg-dark-8 {background: rgba(24, 24, 24, 0.8);}
+.bg-dark-9 {background: rgba(24, 24, 24, 0.9);}
 
 /*General*/
 body {
-    color: #d6d6d6;
-    /*background-image: url(../img/backgrounds/dotted.jfif)*/
+    background-image: url(../img/backgrounds/dotted.jfif);
 }
-
 
 /*Title*/
 .title {
@@ -38,8 +55,20 @@ body {
     filter:blur(0.5px);
 }
 
-.input-text-white {
+/*Shadows*/
+.shadow-light-1 {
+    box-shadow: rgba(124, 124, 124, 0.2) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.dataTables_length, .dataTables_length select, .dataTables_info, #datatable_paginate .next, #datatable_paginate .previous, #datatable_filter {
+    color: #d6d6d6 !important;
+}
+#datatable_filter input {
     color: white !important;
+    background-color:rgb(22, 22, 22);
+}
+#datatable .even {
+    background-color: rgba(65, 65, 65, 0.479);
 }
 
 

@@ -11,7 +11,7 @@
     @livewire('style-imports')
 </head>
 
-<body class="p-5 bg-dark-black">
+<body class="p-5 bg-light-1 text-light-color">
 <div class="mb-4" >
         <div class="">
             <div class="">
