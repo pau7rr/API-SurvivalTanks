@@ -60,6 +60,7 @@ body {
     box-shadow: rgba(124, 124, 124, 0.2) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
+/*Datatables*/
 .dataTables_length, .dataTables_length select, .dataTables_info, #datatable_paginate .next, #datatable_paginate .previous, #datatable_filter {
     color: #d6d6d6 !important;
 }

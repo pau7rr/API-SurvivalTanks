@@ -23,11 +23,12 @@
                 </div>
             @endif
         </div>
+        
+        <div class="d-flex flex-row my-3">
+            <a id="createButton" class="btn btn-success" href="{{ url('/tanks/create') }}"> New Tank</a>
+        </div>
         <div class="row bg-dark-6 p-3 rounded rounded-5 shadow-light-1">
             <table id="datatable" class="table text-light-color table-sm text-center">
-                <div class="d-flex flex-row-reverse">
-                    <a id="createButton" href="{{ url('/tanks/create') }}" class="btn p-1"><img src="https://img.icons8.com/material-outlined/24/ffffff/plus--v1.png" alt="plus" style="max-width: 25px;"></a>
-                </div>
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
