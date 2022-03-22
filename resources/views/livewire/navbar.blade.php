@@ -41,8 +41,8 @@
                     </ul>
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-                            <a href="logout" class="nav-link px-3 bg-dark-green rounded rounded-pill">
-                                <!--<img src="" width="15" height="15"/>--> Logout
+                            <a href="logout" class="nav-link px-3 bn btn-danger rounded">
+                                <img src="https://img.icons8.com/ios/50/000000/exit.png" width="15" height="15"/> Logout
                             </a>
                         </li>
                     </ul>
