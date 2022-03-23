@@ -15,17 +15,17 @@ use Socialite;
 
 class ApiUserController extends Controller
 {
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request){
-        $user = User::create($request->all());
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request){
+      $user = User::create($request->all());
 
-        return response()->json($user, 201);
-    }
+      return response()->json($user, 201);
+  }
 
     public function login() {
       if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
