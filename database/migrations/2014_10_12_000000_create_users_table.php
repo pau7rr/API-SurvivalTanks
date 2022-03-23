@@ -22,12 +22,11 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('user_tank_id')->nullable();
             $table->foreign('user_tank_id')->references('id')->on('user_tanks');
             $table->integer('coins');
+            $table->boolean('banned')->default(false);
             $table->string('token')->nullable();
             $table->rememberToken();
             $table->timestamps();
-        });
-
-        
+        });  
     }
 
     /**
