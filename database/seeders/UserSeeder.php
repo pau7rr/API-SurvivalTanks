@@ -41,6 +41,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('1234'),
                 'user_tank_id' => 3,
                 'coins' => 10,
+                'banned' => true,
             ]            
         );
         User::create(
