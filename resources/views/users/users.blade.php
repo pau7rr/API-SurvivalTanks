@@ -55,12 +55,12 @@
                         <td class="text-center">{{ $user->user_tank_id }}</td>
                         <td class="text-center">{{ $user->coins }}</td>
                         <td class="flex flex-column justify-content-sm-around py-2 px-0 m-0">
-                                <a id="updateBtn" href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary w-75 mb-1">Edit</a>
+                                <a id="updateBtn" href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary w-100 py-0 mb-1">Edit</a>
                                 
                                 <form action="{{ url('/users/' . $user->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button id="deleteBtn" type="submit" class="btn btn-danger w-75">Delete</button> 
+                                    <button id="deleteBtn" type="submit" class="btn btn-danger w-100 py-0">Delete</button> 
                                 </form>
                             </td>
                     </tr>

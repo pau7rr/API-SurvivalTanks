@@ -58,12 +58,12 @@
                         <td class="text-center">
                             <form action="{{ route('devlogs.destroy',$devlog->id) }}" method="POST">
     
-                                <a class="btn btn-primary w-100 mb-1" href="{{ route('devlogs.edit',$devlog->id) }}">Edit</a>
+                                <a class="btn btn-primary w-100 mb-1 py-0" href="{{ route('devlogs.edit',$devlog->id) }}">Edit</a>
     
                                 @csrf
                                 @method('DELETE')
     
-                                <button type="submit" class="btn btn-danger w-100">Delete</button>
+                                <button type="submit" class="btn btn-danger w-100 py-0">Delete</button>
                             </form>
                         </td>
                     </tr>
