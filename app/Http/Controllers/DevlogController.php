@@ -51,7 +51,7 @@ class DevlogController extends Controller
     
         Devlog::create($request->all());
      
-        return redirect()->route('devlogs.index')->with('success','Product created successfully.');
+        return redirect()->route('devlogs.index')->with('success','Devlog created successfully.');
     }
 
     /**

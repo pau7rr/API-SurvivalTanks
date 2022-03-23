@@ -12,17 +12,18 @@
 </head>
 <body class="bg-dark-black text-light-color">
     @livewire('navbar')
-    
+    <!-- Errors Return -->
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{$message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
     <!-- Tanks List -->
     <div class="container my-5">
-        <!-- Errors Return -->
-        <div class="results mt-3">
-            @if(Session::get('fail'))
-                <div class="alert alert-danger">
-                    {{ Session::get('fail') }}
-                </div>
-            @endif
-        </div>
+        
         <!-- Create Btn -->
         <div class="d-flex flex-row my-3">
             <a id="createButton" class="btn btn-success" href="{{ url('/tanks/create') }}"> New Tank</a>
@@ -75,5 +76,5 @@
 </body>
 </html>
 @livewireScripts
-
+<script src="{{ asset('js/app.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
