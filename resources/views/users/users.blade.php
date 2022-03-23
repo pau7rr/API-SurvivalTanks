@@ -8,7 +8,8 @@
     <title>Users</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <!-- Styles -->
+    <link href="{{ asset('css/users.css') }}" rel="stylesheet">
+
     @livewireStyles
     @livewire('style-imports')
 </head>
@@ -54,11 +55,12 @@
                         <td class="text-center">{{ $user->user_tank_id }}</td>
                         <td class="text-center">{{ $user->coins }}</td>
                         <td class="flex flex-column justify-content-sm-around py-2 px-0 m-0">
-                                <a id="updateBtn" href="{{ url('/users/' . $user->id . '/edit') }}" class="mb-2 py-0 px-1 btn btn-default btn-block"><img src="https://img.icons8.com/windows/32/ffffff/edit--v1.png" alt="Edit Button" style="max-width: 20px;"></a>
+                                <a id="updateBtn" href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary w-75 mb-1">Edit</a>
+                                
                                 <form action="{{ url('/users/' . $user->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button id="deleteBtn" type="submit" class="py-0 px-1 h-25 btn btn-default btn-block"><img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/000000/external-trash-essentials-icongeek26-linear-colour-icongeek26.png" alt="Delete Button" style="max-width: 20px;"></button> 
+                                    <button id="deleteBtn" type="submit" class="btn btn-danger w-75">Delete</button> 
                                 </form>
                             </td>
                     </tr>
