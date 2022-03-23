@@ -71,5 +71,10 @@ body {
 #datatable .even {
     background-color: rgba(65, 65, 65, 0.479);
 }
-
-
+.table td, .table th {
+    vertical-align: middle !important;
+    border-top: 0 !important;
+}
+tr:nth-child(even) {
+    background-color: rgba(65, 65, 65, 0.479);
+}
