@@ -63,7 +63,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $data = [
+            'user' => $user
+        ];
+        return view('users.edit', $data);
     }
 
     /**
@@ -75,7 +79,29 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Validate request
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'user_tank_id' => 'required',
+            'coins' => 'required',
+        ]);
+
+        //Search tank instance in DB
+        $user = User::find($id);
+
+        if ($user) {
+            //Update into DB
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->user_tank_id = $request->input('user_tank_id');
+            $user->coins = $request->input('coins');
+            $user->update();
+
+            return redirect('users')->with('success', 'User successfully updated');
+        } else {
+            return redirect('users')->with('fail', 'User could not be updated');
+        }
     }
 
     /**
@@ -86,6 +112,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Search and Delete in DB
+        $user = User::find($id);
+        $user->delete();
+
+        //Redirect
+        if ($user) {
+            return redirect('users')->with('success', 'User successfully deleted');
+        } else {
+            return redirect('users')->with('fail', 'User could not be deleted');
+        }
     }
 }
