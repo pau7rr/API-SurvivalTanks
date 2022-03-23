@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body class="bg-dark-black text-light-color">
-    @livewire('navbar')
-    <div class="container mb-5">
+    
+    <div class="container my-5">
         <!-- Errors Return -->
         <div class="results mt-3">
             @if(Session::get('fail'))
@@ -22,7 +22,14 @@
                     {{ Session::get('fail') }}
                 </div>
             @endif
-        </div>  
+        </div>
+
+        <!-- Go Back -->
+        <div class="">
+                <a class="" href="{{ route('tanks.index') }}"> Back</a>
+        </div>
+
+
         <form action="{{ url('tanks') }}" method="POST">
             @csrf
             <div class="row">

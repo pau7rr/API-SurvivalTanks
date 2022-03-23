@@ -15,19 +15,22 @@
 <body class="bg-dark-black text-light-color">
     <div class="container my-5">
         
-        <!-- Navbar -->
-        <div>
-            <a href="/tanks" class="btn btn-light"><img src="https://img.icons8.com/ios/50/000000/circled-left.png" style="max-width: 20px;"/> Go Back</a>
-        </div>
-
+    
         <!-- Errors Return -->
         <div class="results mt-3">
             @if(Session::get('fail'))
-                <div class="alert alert-danger">
-                    {{ Session::get('fail') }}
-                </div>
+            <div class="alert alert-danger">
+                {{ Session::get('fail') }}
+            </div>
             @endif
         </div>
+
+
+        <!-- Go Back -->
+        <div class="">
+                <a class="" href="{{ route('tanks.index') }}"> Back</a>
+        </div>
+
 
         <form action="{{ url('/tanks/' . $tank->id) }}" method="POST">
             @csrf
