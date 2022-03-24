@@ -67,7 +67,9 @@
             <div class="mb-2">
                 <div class="">
                     <strong>Banned:</strong>
-                    <input class="form-control bg-dark input-text-white" type="checkbox" name="banned" value="{{ $user->banned }}">
+                    @if ($user->banned == true) <input class="form-control bg-dark input-text-white" type="checkbox" name="banned" checked>
+                    @else <input class="form-control bg-dark input-text-white" type="checkbox" name="banned">
+                    @endif
                 </div>
             </div>
             <div class="mt-4">

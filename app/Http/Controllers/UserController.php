@@ -96,6 +96,11 @@ class UserController extends Controller
             $user->email = $request->input('email');
             $user->user_tank_id = $request->input('user_tank_id');
             $user->coins = $request->input('coins');
+            if ($request->input('banned')) {
+                $user->banned = true;
+            } else {
+                $user->banned = false;
+            }
             $user->update();
 
             return redirect('users')->with('success', 'User successfully updated');
