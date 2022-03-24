@@ -43,6 +43,7 @@
                         <th scope="col">User-Tank Id</th>
                         </th>
                         <th scope="col">Coins</th>
+                        <th scope="col">Banned</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -54,15 +55,20 @@
                         <td class="text-center">{{ $user->email }}</td>
                         <td class="text-center">{{ $user->user_tank_id }}</td>
                         <td class="text-center">{{ $user->coins }}</td>
+                        <td class="text-center">
+                            @if ($user->banned == true) <img src="https://img.icons8.com/emoji/48/000000/red-circle-emoji.png" class="banned-icon">
+                            @else <img src="https://img.icons8.com/emoji/48/000000/green-circle-emoji.png" class="banned-icon"/>
+                            @endif
+                        </td>
                         <td class="flex flex-column justify-content-sm-around py-2 px-0 m-0">
-                                <a id="updateBtn" href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary w-100 py-0 mb-1">Edit</a>
-                                
-                                <form action="{{ url('/users/' . $user->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button id="deleteBtn" type="submit" class="btn btn-danger w-100 py-0">Delete</button> 
-                                </form>
-                            </td>
+                            <a id="updateBtn" href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary w-100 py-0 mb-1">Edit</a>
+                            
+                            <form action="{{ url('/users/' . $user->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button id="deleteBtn" type="submit" class="btn btn-danger w-100 py-0">Delete</button> 
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

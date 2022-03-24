@@ -64,6 +64,12 @@
                     <input class="form-control bg-dark input-text-white" name="coins" placeholder="Coins" value="{{ $user->coins }}"/>
                 </div>
             </div>
+            <div class="mb-2">
+                <div class="">
+                    <strong>Banned:</strong>
+                    <input class="form-control bg-dark input-text-white" type="checkbox" name="banned" value="{{ $user->banned }}">
+                </div>
+            </div>
             <div class="mt-4">
               <button type="submit" class="btn btn-success">Submit</button>
             </div>
