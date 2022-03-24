@@ -15,19 +15,22 @@
 <body class="bg-dark-black text-light-color">
     <div class="container my-5">
         
-        <!-- Navbar -->
-        <div>
-            <a href="/tanks" class="btn btn-light"><img src="https://img.icons8.com/ios/50/000000/circled-left.png" style="max-width: 20px;"/> Go Back</a>
-        </div>
-
+    
         <!-- Errors Return -->
         <div class="results mt-3">
             @if(Session::get('fail'))
-                <div class="alert alert-danger">
-                    {{ Session::get('fail') }}
-                </div>
+            <div class="alert alert-danger">
+                {{ Session::get('fail') }}
+            </div>
             @endif
         </div>
+
+
+        <!-- Go Back -->
+        <div class="">
+                <a class="" href="{{ route('tanks.index') }}"> Back</a>
+        </div>
+
 
         <form action="{{ url('/tanks/' . $tank->id) }}" method="POST">
             @csrf
@@ -145,7 +148,7 @@
                         <div class="row mx-2 p-2">
                             <div class="col-md-12 text-center h4 mx-0 mb-3 border-bottom">Preview</div>
                             <div class="imagesContainer w-100 bg-dark-4 border border-primary rounded rounded-3">
-                                <img id="bgImg" src="../../assets/tankConstructor/light.png" alt="light" class="bg-image">
+                                <img id="bgImg" src="../../assets/tankConstructor/Light.png" alt="light" class="bg-image">
                                 <img id="towerImg" src="../../assets/tankConstructor/TowerEdits/Light1.png" alt="tower" class="tower-image">
                                 <img id="hullImg" src="../../assets/tankConstructor/Hulls/SmallHullA.png" alt="hull" class="hull-image">
                                 <img id="trackLeftImg" src="../../assets/tankConstructor/Tracks/TrackAFrame1.png" alt="trackLeft" class="track-left-image">

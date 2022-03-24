@@ -8,7 +8,7 @@ use App\Http\Controllers\tankController;
 
 use App\Http\Controllers\Administrative\TankEditorController;
 use App\Http\Controllers\DevlogController;
-
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,17 +28,16 @@ Route::get('/', [LoginController::class, 'login'])->middleware('alreadyLoggedIn'
 Route::post('/check', [AdminAuthController::class, 'check'])->name('auth.check');
 Route::get('/logout', [AdminAuthController::class, 'logout']);
 
-// Administrative Routes
+// Admin Home Route
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('isLogged');
-Route::get('/devlog', [DevLogController::class, 'devlog'])->middleware('isLogged');
 
-//Tanks Routes
+// CRUD Routes
 Route::group(['middleware' => 'isLogged'], function() {
     Route::resources([
         'tanks' => tankController::class,
+        'devlogs' => DevlogController::class,
+        'users' => UserController::class,
     ]);
 });
-
-Route::resource('/devlogs', DevlogController::class)->middleware('isLogged');
 
 

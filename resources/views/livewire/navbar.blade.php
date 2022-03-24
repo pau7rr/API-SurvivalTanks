@@ -20,10 +20,10 @@
                             <a class="nav-link" href="/tanks">Tanks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/devlogs">Devlog</a>
+                            <a class="nav-link" href="/devlogs">Devlogs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/botiga">Botiga</a>
+                            <a class="nav-link" href="/users">Users</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/noticies">Notícies</a>

@@ -64,3 +64,11 @@ Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed'])->middleware(
 Route::put('/updateSoloStats', [ApiStatsController::class, 'updateSoloStats']);
 
 Route::put('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultiplayerStats']);
+
+/*******  Users Endpoints *******/
+
+Route::put('/updateSoloStats', [ApiStatsController::class, 'updateSoloStats']);
+
+Route::put('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultiplayerStats']);
+
+

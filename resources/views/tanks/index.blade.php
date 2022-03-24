@@ -12,17 +12,18 @@
 </head>
 <body class="bg-dark-black text-light-color">
     @livewire('navbar')
-    
+    <!-- Errors Return -->
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{$message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
     <!-- Tanks List -->
     <div class="container my-5">
-        <!-- Errors Return -->
-        <div class="results mt-3">
-            @if(Session::get('fail'))
-                <div class="alert alert-danger">
-                    {{ Session::get('fail') }}
-                </div>
-            @endif
-        </div>
+        
         <!-- Create Btn -->
         <div class="d-flex flex-row my-3">
             <a id="createButton" class="btn btn-success" href="{{ url('/tanks/create') }}"> New Tank</a>
@@ -55,12 +56,12 @@
                             <td class=""><img src="{{ $tank->body }}" style="max-width: 4rem;"></td>
                             <td class=""><img src="{{ $tank->track }}" style="max-width: 4rem;"></td>
                             <td class=""><img src="{{ $tank->bullet }}" style="max-width: 4rem;"></td>
-                            <td class="flex flex-column justify-content-sm-around py-2 px-0 m-0">
-                                <a id="updateBtn" href="{{ url('/tanks/' . $tank->id . '/edit') }}" class="mb-2 py-0 px-1 btn btn-default btn-block"><img src="https://img.icons8.com/windows/32/ffffff/edit--v1.png" alt="Edit Button" style="max-width: 20px;"></a>
+                            <td class="text-center">
+                                <a id="updateBtn" href="{{ url('/tanks/' . $tank->id . '/edit') }}" class="btn btn-primary w-100 mb-1 py-0">Edit</a>
                                 <form action="{{ url('/tanks/' . $tank->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button id="deleteBtn" type="submit" class="py-0 px-1 h-25 btn btn-default btn-block"><img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/000000/external-trash-essentials-icongeek26-linear-colour-icongeek26.png" alt="Delete Button" style="max-width: 20px;"></button> 
+                                    <button id="deleteBtn" type="submit" class="btn btn-danger w-100 py-0">Delete</button> 
                                 </form>
                             </td>
                         </tr>
@@ -75,5 +76,5 @@
 </body>
 </html>
 @livewireScripts
-
+<script src="{{ asset('js/app.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

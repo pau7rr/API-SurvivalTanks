@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevLogs</title>
+    <title>Users</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <!-- Styles -->
+    <link href="{{ asset('css/users.css') }}" rel="stylesheet">
+
     @livewireStyles
     @livewire('style-imports')
 </head>
@@ -29,41 +30,43 @@
             
 
     <div class="container my-5">
-        <div class="d-flex flex-row-reverse my-3">
-            <a class="btn btn-success" href="{{ route('devlogs.create') }}"> New Devlog</a>
-        </div>
+        <!--<div class="d-flex flex-row-reverse my-3">
+            <a class="btn btn-success" href="{{ route('users.create') }}"> New User</a>
+        </div>-->
         <div class=" bg-dark-6 shadow-light-1 p-3 ">
             <table id="datatable" class="table table-striped text-light-color">
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Version</th>
-                        <th scope="col">Thumbnail</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">User-Tank Id</th>
                         </th>
-                        <th scope="col">Summary</th>
-                        <th scope="col">Content</th>
+                        <th scope="col">Coins</th>
+                        <th scope="col">Banned</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($devlogs as $devlog)
+                    @foreach($users as $user)
                     <tr>
-                        <td class="text-center">{{ $devlog->id }}</td>
-                        <td class="text-center">{{ $devlog->title }}</td>
-                        <td class="text-center">{{ $devlog->version }}</td>
-                        <td class="text-center"><img id="thumbnail" width="50px" height="50px" class="thumbnail rounded-circle" src="{{ $devlog->thumbnail_url }}"></td>
-                        <td class="text-center">{{ $devlog->summary }}</td>
-                        <td class="text-center">{{ $devlog->content }}</td>
+                        <td class="text-center">{{ $user->id }}</td>
+                        <td class="text-center">{{ $user->name }}</td>
+                        <td class="text-center">{{ $user->email }}</td>
+                        <td class="text-center">{{ $user->user_tank_id }}</td>
+                        <td class="text-center">{{ $user->coins }}</td>
                         <td class="text-center">
-                            <form action="{{ route('devlogs.destroy',$devlog->id) }}" method="POST">
-    
-                                <a class="btn btn-primary w-100 mb-1 py-0" href="{{ route('devlogs.edit',$devlog->id) }}">Edit</a>
-    
+                            @if ($user->banned == true) <img src="https://img.icons8.com/emoji/48/000000/red-circle-emoji.png" class="banned-icon">
+                            @else <img src="https://img.icons8.com/emoji/48/000000/green-circle-emoji.png" class="banned-icon"/>
+                            @endif
+                        </td>
+                        <td class="flex flex-column justify-content-sm-around py-2 px-0 m-0">
+                            <a id="updateBtn" href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary w-100 py-0 mb-1">Edit</a>
+                            
+                            <form action="{{ url('/users/' . $user->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-    
-                                <button type="submit" class="btn btn-danger w-100 py-0">Delete</button>
+                                <button id="deleteBtn" type="submit" class="btn btn-danger w-100 py-0">Delete</button> 
                             </form>
                         </td>
                     </tr>
