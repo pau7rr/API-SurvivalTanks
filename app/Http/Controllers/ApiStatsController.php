@@ -28,7 +28,8 @@ class ApiStatsController extends Controller
             ], 401);
         }
         
-        $soloStats = SoloStats::find($request->user_id);
+        $soloStats = SoloStats::where('user_id', $request->user_id)->first();
+
         $soloStats->games += 1;
         $soloStats->kills += $request->kills;
         $soloStats->time_played += $request->time_played;
