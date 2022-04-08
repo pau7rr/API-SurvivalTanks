@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SoloStats extends Model
 {
     use HasFactory;
+    protected $connection = 'mysql';
 
     protected $fillable = [
         'user_id',

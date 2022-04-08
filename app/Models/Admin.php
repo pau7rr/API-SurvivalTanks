@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     use HasFactory;
+    protected $connection = 'mysql';
+    
     protected $fillable = [ 
         'username',
         'password'
