@@ -58,7 +58,7 @@ return [
         'mongodb' => [
             'driver' => 'mongodb',
             'dsn' => env('DB_URI', 'mongodb+srv://mongodb:mongodb@cluster0.yyhku.mongodb.net/SurvivalTanks?retryWrites=true&w=majority'),
-            'database' => 'myappdb',
+            'database' => 'SurvivalTanks',
         ],
 
         'pgsql' => [

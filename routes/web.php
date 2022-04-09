@@ -9,6 +9,7 @@ use App\Http\Controllers\tankController;
 use App\Http\Controllers\Administrative\TankEditorController;
 use App\Http\Controllers\DevlogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::group(['middleware' => 'isLogged'], function() {
         'tanks' => tankController::class,
         'devlogs' => DevlogController::class,
         'users' => UserController::class,
+        'stats' => StatsController::class,
     ]);
 });
 
