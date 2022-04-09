@@ -33,7 +33,6 @@
             <table id="datatable" class="table text-light-color table-sm text-center">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
                         <th scope="col">Games</th>
                         <th scope="col">Users</th>
                         <th scope="col"></th>
@@ -43,7 +42,6 @@
                     <!-- Loop for each Tank -->
                     @foreach($stats as $stat)
                         <tr>
-                            <td class="">{{ $stat->_id }}</td>
                             <td class="">{{ $stat->games }}</td>
                             <td class="">{{ $stat->users }}</td>
                             <td class="text-center">
