@@ -34,8 +34,8 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Strengh</th>
-                        <th scope="col">Health</th>
+                        <th scope="col">Games</th>
+                        <th scope="col">Users</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
