@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\SoloStats;
 use App\Models\MultiplayerStats;
 use App\Models\User;
+use App\Models\Stats;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -44,6 +45,9 @@ class ApiStatsController extends Controller
         }
         
         $soloStats->save();
+
+        updateGeneralStats();
+
         return response()->json($soloStats, 201);
         
     }
@@ -83,6 +87,9 @@ class ApiStatsController extends Controller
         
         
         $multiplayerStats->save();
+
+        updateGeneralStats();
+        
         return response()->json($multiplayerStats, 201);
     }
 
@@ -104,5 +111,12 @@ class ApiStatsController extends Controller
         }
 
         return response()->json($arr, 201);   
+    }
+
+    function updateGeneralStats() {
+        $generalStats = Stats::first();
+        $generalStats->games += 1;
+        $generalStats->save();
+
     }
 }
