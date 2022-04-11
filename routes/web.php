@@ -38,7 +38,6 @@ Route::group(['middleware' => 'isLogged'], function() {
         'tanks' => tankController::class,
         'devlogs' => DevlogController::class,
         'users' => UserController::class,
-        'stats' => StatsController::class,
     ]);
 });
 

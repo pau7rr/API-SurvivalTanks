@@ -25,9 +25,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/users">Users</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/stats">Stats</a>
-                        </li>
                     </ul>
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
