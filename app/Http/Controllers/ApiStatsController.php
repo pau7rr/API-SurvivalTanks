@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\SoloStats;
 use App\Models\MultiplayerStats;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ApiStatsController extends Controller
 {
@@ -28,7 +31,8 @@ class ApiStatsController extends Controller
             ], 401);
         }
         
-        $soloStats = SoloStats::find($request->user_id);
+        $soloStats = SoloStats::where('user_id', $request->user_id)->first();
+
         $soloStats->games += 1;
         $soloStats->kills += $request->kills;
         $soloStats->time_played += $request->time_played;
@@ -80,5 +84,25 @@ class ApiStatsController extends Controller
         
         $multiplayerStats->save();
         return response()->json($multiplayerStats, 201);
+    }
+
+    public function getRoundsRanking() {
+
+        $stats = SoloStats::orderBy('highest_round', 'DESC')->get();
+        $arr = [];
+        
+        foreach ($stats as &$e) {
+
+            $user = User::where('id', $e->user_id)->first(); 
+
+            array_push($arr, (object) [
+                'username' => $user->name,
+                'highest_round' => $e->highest_round,
+                'games_played' => $e->games,
+                'kills' => $e->kills
+            ]);
+        }
+
+        return response()->json($arr, 201);   
     }
 }

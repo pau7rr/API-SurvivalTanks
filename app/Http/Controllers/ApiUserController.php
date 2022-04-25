@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ResetPassword;
+use App\Models\SoloStats;
 use App\Models\User;
 use App\Models\UserTank;
 use Illuminate\Http\Request;
@@ -109,9 +110,13 @@ class ApiUserController extends Controller
 
     $input['user_tank_id'] = $userTank->id;
 
+    $input['token'] = generateRandomString(10);
+
     $input['coins'] = 0;
 
     $user = User::create($input);
+
+    SoloStats::create(['user_id' => $user->id, 'games' => 0, 'highest_round' => 0, 'kills' => 0, 'time_played' => 0, 'shots' => 0, 'successful_shots' => 0]);
 
     $success['token'] = $user->createToken('appToken')->accessToken;
 
@@ -168,6 +173,8 @@ class ApiUserController extends Controller
     $input['token'] = generateRandomString(10);
 
     $user = User::create($input);
+
+    SoloStats::create(['user_id' => $user->id, 'games' => 0, 'highest_round' => 0, 'kills' => 0, 'time_played' => 0, 'shots' => 0, 'successful_shots' => 0]);
     
     $success['token'] = $user->createToken('appToken')->accessToken;
 
@@ -219,6 +226,7 @@ class ApiUserController extends Controller
           "name" => $user->name,
           "email" => $user->email,
           "password" => bcrypt('1234'),
+          "token" => generateRandomString(10),
         ];
 
         $validator = Validator::make($userObj, [
