@@ -8,7 +8,7 @@
     <title>Users</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <link href="{{ asset('css/users.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/usertanks.css') }}" rel="stylesheet">
 
     @livewireStyles
     @livewire('style-imports')
@@ -31,39 +31,38 @@
 
     <div class="container my-5">
         <!--<div class="d-flex flex-row-reverse my-3">
-            <a class="btn btn-success" href="{{ route('users.create') }}"> New User</a>
+            <a class="btn btn-success" href="{{ route('usertanks.create') }}"> New User</a>
         </div>-->
         <div class=" bg-dark-6 shadow-light-1 p-3 ">
             <table id="datatable" class="table table-striped text-light-color">
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">User-Tank Id</th>
-                        </th>
-                        <th scope="col">Coins</th>
-                        <th scope="col">Banned</th>
+                        <th scope="col">Health</th>
+                        <th scope="col">Strengh</th>
+                        <th scope="col">Speed</th>
+                        <th scope="col">Tower</th>
+                        <th scope="col">Body</th>
+                        <th scope="col">Track</th>
+                        <th scope="col">Bullet</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($users as $user)
+                    @foreach($usertanks as $usertank)
                     <tr>
-                        <td class="text-center">{{ $user->id }}</td>
-                        <td class="text-center">{{ $user->name }}</td>
-                        <td class="text-center">{{ $user->email }}</td>
-                        <td class="text-center"><a href="{{ url('/usertanks/' . $user->id . '/edit') }}">{{ $user->user_tank_id }}</a></td>
-                        <td class="text-center">{{ $user->coins }}</td>
-                        <td class="text-center">
-                            @if ($user->banned == true) <img src="https://img.icons8.com/emoji/48/000000/red-circle-emoji.png" class="banned-icon">
-                            @else <img src="https://img.icons8.com/emoji/48/000000/green-circle-emoji.png" class="banned-icon"/>
-                            @endif
-                        </td>
+                        <td class="text-center">{{ $usertank->id }}</td>
+                        <td class="text-center">{{ $usertank->health }}</td>
+                        <td class="text-center">{{ $usertank->strengh }}</td>
+                        <td class="text-center">{{ $usertank->speed }}</td>
+                            <td class=""><img src="{{ $usertank->tower }}" style="max-width: 4rem;"></td>
+                            <td class=""><img src="{{ $usertank->body }}" style="max-width: 4rem;"></td>
+                            <td class=""><img src="{{ $usertank->track }}" style="max-width: 4rem;"></td>
+                            <td class=""><img src="{{ $usertank->bullet }}" style="max-width: 4rem;"></td>
                         <td class="flex flex-column justify-content-sm-around py-2 px-0 m-0">
-                            <a id="updateBtn" href="{{ url('/users/' . $user->id . '/edit') }}" class="btn btn-primary w-100 py-0 mb-1">Edit</a>
+                            <a id="updateBtn" href="{{ url('/usertanks/' . $usertank->id . '/edit') }}" class="btn btn-primary w-100 py-0 mb-1">Edit</a>
                             
-                            <form action="{{ url('/users/' . $user->id) }}" method="POST">
+                            <form action="{{ url('/usertanks/' . $usertank->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button id="deleteBtn" type="submit" class="btn btn-danger w-100 py-0">Delete</button> 

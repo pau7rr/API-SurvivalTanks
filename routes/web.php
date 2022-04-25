@@ -1,14 +1,15 @@
 <?php
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Auth\AdminAuthController;
+
 use App\Http\Controllers\Administrative\DashboardController;
 use App\Http\Controllers\tankController;
-
-
 use App\Http\Controllers\Administrative\TankEditorController;
 use App\Http\Controllers\DevlogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserTankController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::group(['middleware' => 'isLogged'], function() {
         'tanks' => tankController::class,
         'devlogs' => DevlogController::class,
         'users' => UserController::class,
+        'usertanks' => UserTankController::class,
     ]);
 });
 
