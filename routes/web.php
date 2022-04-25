@@ -10,6 +10,7 @@ use App\Http\Controllers\Administrative\TankEditorController;
 use App\Http\Controllers\DevlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserTankController;
+use App\Http\Controllers\StatsController;
 
 /*
 |--------------------------------------------------------------------------

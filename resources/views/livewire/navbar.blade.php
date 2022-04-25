@@ -28,16 +28,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/usertanks">Usertanks</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/resultats">Resultats</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/contacte">Contacte</a>
-                            <div class="dropdown-menu">
-                                <a href="/contactar" class="dropdown-item">Contactar Staff</a>
-                                <a href="/quisom" class="dropdown-item">Qui som</a>
-                            </div>
-                        </li>
                     </ul>
                     <ul class="nav navbar-nav">
                         <li class="nav-item">

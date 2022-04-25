@@ -19,21 +19,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-/*******  User Endpoints *******/
+/*******  Auth Endpoints *******/
 
 Route::post('/login', [ApiUserController::class, 'login']);
 
 Route::post('/register', [ApiUserController::class, 'register']);
-
-Route::get('/users', [ApiUserController::class, 'users'])->middleware('auth:api');
-
-Route::get('/user', [ApiUserController::class, 'user'])->middleware('auth:api');
 
 Route::get('/logout', [ApiUserController::class, 'logout'])->middleware('auth:api');
 
 Route::post('sociallogin/{provider}', [ApiUserController::class, 'socialsignup']);
 
 Route::post('sociallogin', [ApiUserController::class, 'socialLogin']);
+
+/*******  User Endpoints *******/
+
+Route::get('/user', [ApiUserController::class, 'user'])->middleware('auth:api');
+
+Route::get('/users', [ApiUserController::class, 'users'])->middleware('auth:api');
 
 Route::get('user/coins', [ApiUserController::class, 'getCoins'])->middleware('auth:api');
 
@@ -68,4 +70,3 @@ Route::post('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultip
 /*******  Game Stats Endpoints *******/
 
 Route::get('/roundsRanking', [ApiStatsController::class, 'getRoundsRanking']);
-

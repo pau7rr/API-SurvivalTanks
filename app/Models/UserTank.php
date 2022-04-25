@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserTank extends Model
 {
     use HasFactory;
+    protected $connection = 'mysql';
 
     protected $fillable = [
         'strengh',
