@@ -63,6 +63,9 @@ Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed'])->middleware(
 
 Route::post('/updateSoloStats', [ApiStatsController::class, 'updateSoloStats']);
 
+Route::post('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultiplayerStats']);
+
+/*******  Game Stats Endpoints *******/
+
 Route::get('/roundsRanking', [ApiStatsController::class, 'getRoundsRanking']);
 
-Route::post('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultiplayerStats']);
