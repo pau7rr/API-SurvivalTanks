@@ -67,6 +67,6 @@ Route::post('/updateSoloStats', [ApiStatsController::class, 'updateSoloStats']);
 
 Route::post('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultiplayerStats']);
 
-/*******  Game Stats Endpoints  HAHAHAHAHAH*******/
+/*******  Game Stats Endpoints *******/
 
 Route::get('/roundsRanking', [ApiStatsController::class, 'getRoundsRanking']);
