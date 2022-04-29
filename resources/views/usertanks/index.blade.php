@@ -55,10 +55,10 @@
                         <td class="text-center">{{ $usertank->health }}</td>
                         <td class="text-center">{{ $usertank->strengh }}</td>
                         <td class="text-center">{{ $usertank->speed }}</td>
-                            <td class=""><img src="{{ $usertank->tower }}" style="max-width: 4rem;"></td>
-                            <td class=""><img src="{{ $usertank->body }}" style="max-width: 4rem;"></td>
-                            <td class=""><img src="{{ $usertank->track }}" style="max-width: 4rem;"></td>
-                            <td class=""><img src="{{ $usertank->bullet }}" style="max-width: 4rem;"></td>
+                        <td class=""><img src="{{ $usertank->tower }}" style="max-width: 4rem;"></td>
+                        <td class=""><img src="{{ $usertank->body }}" style="max-width: 4rem;"></td>
+                        <td class=""><img src="{{ $usertank->track }}" style="max-width: 4rem;"></td>
+                        <td class=""><img src="{{ $usertank->bullet }}" style="max-width: 4rem;"></td>
                         <td class="flex flex-column justify-content-sm-around py-2 px-0 m-0">
                             <a id="updateBtn" href="{{ url('/usertanks/' . $usertank->id . '/edit') }}" class="btn btn-primary w-100 py-0 mb-1">Edit</a>
                             
