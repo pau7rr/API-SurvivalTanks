@@ -13,11 +13,13 @@ class CreateUserTankTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_tank', function (Blueprint $table) {
+        Schema::create('user_tanks', function (Blueprint $table) {
             $table->id();
             $table->integer('strengh');
             $table->integer('health');
             $table->integer('speed');
+            $table->integer('bombs');
+            $table->integer('regeneration');
             $table->string('tower', 255);
             $table->string('body', 255);
             $table->string('track', 255);
@@ -33,6 +35,6 @@ class CreateUserTankTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_tank');
+        Schema::dropIfExists('user_tanks');
     }
 }
