@@ -53,7 +53,7 @@
                         <td class="text-center">{{ $user->id }}</td>
                         <td class="text-center">{{ $user->name }}</td>
                         <td class="text-center">{{ $user->email }}</td>
-                        <td class="text-center"><a href="{{ url('/usertanks/' . $user->id . '/edit') }}">{{ $user->user_tank_id }}</a></td>
+                        <td class="text-center"><a href="{{ url('/usertanks/' . $user->user_tank_id . '/edit') }}">{{ $user->user_tank_id }}</a></td>
                         <td class="text-center">{{ $user->coins }}</td>
                         <td class="text-center">
                             @if ($user->banned == true) <img src="https://img.icons8.com/emoji/48/000000/red-circle-emoji.png" class="banned-icon">
