@@ -47,6 +47,7 @@ class tankController extends Controller
             'strengh' => 'required',
             'health' => 'required',
             'speed' => 'required',
+            'difficulty' => 'required',
             'tower' => 'required|max:255',
             'body' => 'required|max:255',
             'track' => 'required|max:255',
@@ -58,6 +59,7 @@ class tankController extends Controller
         $tank->strengh = $request->input('strengh');
         $tank->health = $request->input('health');
         $tank->speed = $request->input('speed');
+        $tank->difficulty = $request->input('difficulty');
         $tank->tower = $request->input('tower');
         $tank->body = $request->input('body');
         $tank->track = $request->input('track');
@@ -112,6 +114,7 @@ class tankController extends Controller
             'strengh' => 'required',
             'health' => 'required',
             'speed' => 'required',
+            'difficulty' => 'required',
             'tower' => 'required|max:255',
             'body' => 'required|max:255',
             'track' => 'required|max:255',
@@ -126,6 +129,7 @@ class tankController extends Controller
             $tank->strengh = $request->input('strengh');
             $tank->health = $request->input('health');
             $tank->speed = $request->input('speed');
+            $tank->difficulty = $request->input('difficulty');
             $tank->tower = $request->input('tower');
             $tank->body = $request->input('body');
             $tank->track = $request->input('track');

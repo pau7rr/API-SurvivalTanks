@@ -124,17 +124,27 @@
                             <div class="input-group mx-2 mt-5">
                                 <img src="https://img.icons8.com/ios/50/ffffff/clenched-fist.png" alt="" class="mx-2">
                                 <!--<label class="form-label mx-3" for="typeNumber">Strengh</label>-->
-                                <input type="number" name="strengh" class="form-control ml-3 mr-4 mt-2 bg-dark rounded rounded-5" style="color: white;"/>
+                                <input type="number" name="strengh" class="form-control ml-3 mr-4 mt-2 bg-dark rounded rounded-5" style="color: white;" min="25" max="75"/>
                             </div>
                             <!-- Input Health -->
                             <div class="input-group mx-2 mt-5">
                                 <img src="https://img.icons8.com/metro/52/ffffff/like.png" alt="" class="mx-2 mt-2"/>
-                                <input type="number" name="health" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;"/>
+                                <input type="number" name="health" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;" min="100" max="500"/>
                             </div>
                             <!-- Input Velocity -->
                             <div class="input-group mx-2 mt-5">
                                 <img src="https://img.icons8.com/ios/50/ffffff/running-rabbit.png" alt="" class="mx-2 mt-3 mb-3"/>
-                                <input type="number" name="speed" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;"/>
+                                <input type="number" name="speed" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;" min="1" max="9"/>
+                            </div>
+                            <!-- Input Difficulty -->
+                            <div class="input-group mx-2 mt-5">
+                                <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/48/ffffff/external-dashboard-settings-those-icons-lineal-those-icons.png" alt="" class="mx-2 mt-3 mb-3"/>
+                                <select name="difficulty" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;">
+                                    <option value="none" selected disabled hidden>Difficulty</option>
+                                    <option value="1">Normal</option>
+                                    <option value="2">Fast</option>
+                                    <option value="3">Big Bro</option>
+                                </select>
                             </div>
                         </div>
                     </div>
