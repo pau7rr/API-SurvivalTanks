@@ -86,6 +86,8 @@ class UserTankController extends Controller
             'health' => 'required',
             'strengh' => 'required',
             'speed' => 'required',
+            'bombs' => 'required',
+            'regeneration' => 'required',
             'tower' => 'required',
             'body' => 'required',
             'track' => 'required',

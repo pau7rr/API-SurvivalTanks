@@ -41,6 +41,8 @@
                         <th scope="col">Health</th>
                         <th scope="col">Strengh</th>
                         <th scope="col">Speed</th>
+                        <th scope="col">Bombs</th>
+                        <th scope="col">Regeneration</th>
                         <th scope="col">Tower</th>
                         <th scope="col">Body</th>
                         <th scope="col">Track</th>
@@ -55,6 +57,8 @@
                         <td class="text-center">{{ $usertank->health }}</td>
                         <td class="text-center">{{ $usertank->strengh }}</td>
                         <td class="text-center">{{ $usertank->speed }}</td>
+                        <td class="text-center">{{ $usertank->bombs }}</td>
+                        <td class="text-center">{{ $usertank->regeneration }}</td>
                         <td class=""><img src="{{ $usertank->tower }}" style="max-width: 4rem;"></td>
                         <td class=""><img src="{{ $usertank->body }}" style="max-width: 4rem;"></td>
                         <td class=""><img src="{{ $usertank->track }}" style="max-width: 4rem;"></td>

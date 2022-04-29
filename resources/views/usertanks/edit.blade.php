@@ -65,6 +65,18 @@
             </div>
             <div class="mb-2">
                 <div class="">
+                    <strong>Bombs:</strong>
+                    <input class="form-control bg-dark input-text-white" type="number" name="bombs" value="{{ $usertank->bombs }}"  placeholder="Bombs">
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="">
+                    <strong>Regeneration:</strong>
+                    <input class="form-control bg-dark input-text-white" type="number" name="regeneration" value="{{ $usertank->regeneration }}"  placeholder="Regeneration">
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="">
                     <strong>Tower:</strong>
                     <input class="form-control bg-dark input-text-white" name="tower" placeholder="Tower" value="{{ $usertank->tower }}"/>
                 </div>

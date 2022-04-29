@@ -122,5 +122,61 @@ class ApiUserTankController extends Controller
         }
     }
 
+    public function sumBomb() {
 
+        if (Auth::user()) {
+
+            $userId = Auth::id();
+            
+            $user = User::all()->where('id', $userId)->first();
+
+            $userTank = UserTank::find($user->user_tank_id);
+
+            $newBombs = $userTank->bombs + 1;
+
+            $userTank->update(['bombs' => $newBombs]);
+           
+            return response()->json($userTank);
+          
+        } else {
+      
+            return response()->json([
+      
+              'success' => false,
+      
+              'message' => 'Unable to sum speed'
+      
+            ]);
+      
+        }
+    }
+    
+    public function sumRegeneration() {
+
+        if (Auth::user()) {
+
+            $userId = Auth::id();
+            
+            $user = User::all()->where('id', $userId)->first();
+
+            $userTank = UserTank::find($user->user_tank_id);
+
+            $newRegeneration = $userTank->regeneration + 1;
+
+            $userTank->update(['regeneration' => $newRegeneration]);
+           
+            return response()->json($userTank);
+          
+        } else {
+      
+            return response()->json([
+      
+              'success' => false,
+      
+              'message' => 'Unable to sum speed'
+      
+            ]);
+      
+        }
+    }
 }
