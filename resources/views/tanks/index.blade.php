@@ -37,6 +37,7 @@
                         <th scope="col">Strengh</th>
                         <th scope="col">Health</th>
                         <th scope="col">Speed</th>
+                        <th scope="col">Difficulty</th>
                         <th scope="col">Tower</th>
                         <th scope="col">Body</th>
                         <th scope="col">Track</th>
@@ -52,6 +53,15 @@
                             <td class="">{{ $tank->strengh }}</td>
                             <td class="">{{ $tank->health }}</td>
                             <td class="">{{ $tank->speed }}</td>
+                            
+                                @if ($tank->difficulty  == 1)
+                                <td class="">Normal</td>
+                                @elseif ($tank->difficulty  == 2)
+                                <td class="">Fast</td>
+                                @elseif ($tank->difficulty  == 3)
+                                <td class="">Big Bro</td>
+                                @endif
+                            
                             <td class=""><img src="{{ $tank->tower }}" style="max-width: 4rem;"></td>
                             <td class=""><img src="{{ $tank->body }}" style="max-width: 4rem;"></td>
                             <td class=""><img src="{{ $tank->track }}" style="max-width: 4rem;"></td>
