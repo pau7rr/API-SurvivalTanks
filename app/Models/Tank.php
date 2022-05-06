@@ -13,6 +13,10 @@ class Tank extends Model
     protected $fillable = [ 
         'strengh',
         'health',
-        'speed'
+        'speed',
+        'tower',
+        'body',
+        'track',
+        'bullet',
     ];
 }

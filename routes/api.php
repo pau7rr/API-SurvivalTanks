@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApiDevlogController;
 use App\Http\Controllers\ApiUserController;
+use App\Http\Controllers\ApiTankController;
 use App\Http\Controllers\ApiUserTankController;
 use App\Http\Controllers\ApiStatsController;
 use Illuminate\Http\Request;

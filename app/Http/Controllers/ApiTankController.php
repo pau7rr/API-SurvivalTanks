@@ -4,28 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use App\Models\Tank;
 
 class ApiTankController extends Controller
 {
     public function getAlltanks(){
 
-          $tanks = Tank::all();
-    
+      $tanks = Tank::get();
+
           return response()->json([
     
             'success' => true,
     
             'data' => $tanks
     
-          ]);
-    
-          return response()->json([
-    
-            'success' => false,
-    
-            'message' => 'Unable to Login'
-    
-          ]);    
+          ]); 
       }
 }
