@@ -74,3 +74,5 @@ Route::post('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultip
 /*******  Game Stats Endpoints *******/
 
 Route::get('/roundsRanking', [ApiStatsController::class, 'getRoundsRanking']);
+
+Route::get('/getAllTanks', [ApiStatsController::class, 'getAllTanks']);

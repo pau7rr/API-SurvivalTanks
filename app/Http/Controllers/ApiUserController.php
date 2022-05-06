@@ -32,6 +32,13 @@ class ApiUserController extends Controller
       if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
 
         $user = Auth::user();
+        
+        if ($user->banned == true) {
+          return response()->json([
+            'success' => false,
+            'message' => 'You are banned!',
+          ]);
+        }
 
         $success['token'] = $user->createToken('appToken')->accessToken;
 
@@ -72,6 +79,13 @@ class ApiUserController extends Controller
       if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
 
         $user = Auth::user();
+
+        if ($user->banned == true) {
+          return response()->json([
+            'success' => false,
+            'message' => 'You are banned!',
+          ]);
+        }
   
         $success['token'] = $user->createToken('appToken')->accessToken;
   
