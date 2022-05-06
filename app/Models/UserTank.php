@@ -14,6 +14,8 @@ class UserTank extends Model
         'strengh',
         'health',
         'speed',
+        'bombs',
+        'regeneration',
         'tower',
         'body',
         'track',

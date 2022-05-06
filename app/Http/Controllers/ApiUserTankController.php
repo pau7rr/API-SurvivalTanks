@@ -144,7 +144,7 @@ class ApiUserTankController extends Controller
       
               'success' => false,
       
-              'message' => 'Unable to sum speed'
+              'message' => 'Unable to sum bombs'
       
             ]);
       
@@ -173,7 +173,7 @@ class ApiUserTankController extends Controller
       
               'success' => false,
       
-              'message' => 'Unable to sum speed'
+              'message' => 'Unable to sum regeneration'
       
             ]);
       
