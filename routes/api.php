@@ -47,9 +47,9 @@ Route::post('user/send-reset-email', [ApiUserController::class, 'sendResetPasswo
 
 Route::post('user/reset-password', [ApiUserController::class, 'resetPassword']);
 
-Route::post('user/updateUsername', [ApiUserController::class, 'updateUsername'])->middleware('auth:api');
+Route::put('user/updateUsername', [ApiUserController::class, 'updateUsername'])->middleware('auth:api');
 
-Route::post('user/updatePassword', [ApiUserController::class, 'updatePassword'])->middleware('auth:api');
+Route::put('user/updatePassword', [ApiUserController::class, 'updatePassword'])->middleware('auth:api');
 
 /*******  Devlog Endpoints *******/
 
@@ -58,6 +58,8 @@ Route::get('devlogs', [ApiDevlogController::class, 'index']);
 /*******  UserTank Endpoints *******/
 
 Route::get('/usertank', [ApiUserTankController::class, 'getUserTank'])->middleware('auth:api');
+
+Route::put('/usertank/updateSkin', [ApiUserController::class, 'updateSkin'])->middleware('auth:api');
 
 Route::put('/sumStrength', [ApiUserTankController::class, 'sumStrength'])->middleware('auth:api');
 
@@ -79,4 +81,4 @@ Route::post('/updateMultiplayerStats', [ApiStatsController::class, 'updateMultip
 
 Route::get('/roundsRanking', [ApiStatsController::class, 'getRoundsRanking']);
 
-Route::get('/getAllTanks', [ApiStatsController::class, 'getAllTanks']);
+Route::get('/getAllTanks', [ApiTankController::class, 'getAllTanks']);

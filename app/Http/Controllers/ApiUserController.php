@@ -472,8 +472,13 @@ class ApiUserController extends Controller
 
       $user->save();
 
-      return response()->json($user->coins);
-    
+      return response()->json([
+
+        'success' => true,
+
+        'message' => 'Username changed successfully'
+
+      ]);     
     } else {
 
       return response()->json([
@@ -501,12 +506,58 @@ class ApiUserController extends Controller
         $user->save();
 
       }
+      return response()->json([
+
+        'success' => true,
+
+        'message' => 'Password changed successfully'
+
+      ]);    
+    } else {
+
+      return response()->json([
+
+        'success' => false,
+
+        'message' => 'Unable to update password'
+
+      ]);
+    }
+  }
+
+  Public function updateSkin(Request $request) {
+    
+    if (Auth::user()) {
+
+      //Validate request
+      $this->validate($request, [
+        'tower' => 'required',
+        'body' => 'required',
+        'track' => 'required',
+        'bullet' => 'required',
+      ]);
+
+      $userId = Auth::id();
+
+      $user = User::all()->where('id', $userId)->first();
+
+      $userTank = UserTanks::all()->where('id', '=', $user->user_tank_id)->first();
+
+      $userTank->tower = $request->tower;
+      $userTank->body = $request->body;
+      $userTank->track = $request->track;
+      $userTank->bullet = $request->bullet;
+
+
+      $userTank->save();
       
-      
+      return response()->json([
 
+        'success' => true,
 
+        'message' => 'Skin changed successfully'
 
-      return response()->json($user->coins);
+      ]);
     
     } else {
 
@@ -514,10 +565,9 @@ class ApiUserController extends Controller
 
         'success' => false,
 
-        'message' => 'Unable to update username'
+        'message' => 'Unable to update skin'
 
       ]);
-
     }
   }
 
