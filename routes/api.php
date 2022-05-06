@@ -61,6 +61,10 @@ Route::put('/sumHealth', [ApiUserTankController::class, 'sumHealth'])->middlewar
 
 Route::put('/sumSpeed', [ApiUserTankController::class, 'sumSpeed'])->middleware('auth:api');
 
+Route::put('/sumBombs', [ApiUserTankController::class, 'sumBomb'])->middleware('auth:api');
+
+Route::put('/sumRegen', [ApiUserTankController::class, 'sumRegeneration'])->middleware('auth:api');
+
 /*******  User Stats Endpoints *******/
 
 Route::post('/updateSoloStats', [ApiStatsController::class, 'updateSoloStats']);
