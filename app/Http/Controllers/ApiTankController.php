@@ -10,8 +10,6 @@ class ApiTankController extends Controller
 {
     public function getAlltanks(){
 
-        if (Auth::user()) {
-    
           $tanks = Tank::all();
     
           return response()->json([
@@ -22,17 +20,12 @@ class ApiTankController extends Controller
     
           ]);
     
-        }else {
-    
           return response()->json([
     
             'success' => false,
     
             'message' => 'Unable to Login'
     
-          ]);
-    
-        }
-    
+          ]);    
       }
 }

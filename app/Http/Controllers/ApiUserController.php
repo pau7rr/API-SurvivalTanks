@@ -460,6 +460,67 @@ class ApiUserController extends Controller
 
   }
 
+  public function updateUsername(Request $request) {
+    
+    if (Auth::user()) {
+
+      $userId = Auth::id();
+
+      $user = User::all()->where('id', $userId)->first();
+
+      $user->username = $request->username;
+
+      $user->save();
+
+      return response()->json($user->coins);
+    
+    } else {
+
+      return response()->json([
+
+        'success' => false,
+
+        'message' => 'Unable to update username'
+
+      ]);
+    }
+  }
+
+  public function updatePassword(Request $request) {
+
+    if (Auth::user()) {
+
+      $userId = Auth::id();
+
+      $user = User::all()->where('id', $userId)->first();
+
+      if(Hash::check($request->oldPassword, $user->password)) {
+
+        $user->password = Hash::make($request->newPassword);
+  
+        $user->save();
+
+      }
+      
+      
+
+
+
+      return response()->json($user->coins);
+    
+    } else {
+
+      return response()->json([
+
+        'success' => false,
+
+        'message' => 'Unable to update username'
+
+      ]);
+
+    }
+  }
+
 }
 
 function generateRandomString($length = 10) {

@@ -47,6 +47,10 @@ Route::post('user/send-reset-email', [ApiUserController::class, 'sendResetPasswo
 
 Route::post('user/reset-password', [ApiUserController::class, 'resetPassword']);
 
+Route::post('user/updateUsername', [ApiUserController::class, 'updateUsername'])->middleware('auth:api');
+
+Route::post('user/updatePassword', [ApiUserController::class, 'updatePassword'])->middleware('auth:api');
+
 /*******  Devlog Endpoints *******/
 
 Route::get('devlogs', [ApiDevlogController::class, 'index']);

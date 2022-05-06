@@ -161,7 +161,7 @@ class ApiUserTankController extends Controller
 
             $userTank = UserTank::find($user->user_tank_id);
 
-            $newRegeneration = $userTank->regeneration + 1;
+            $newRegeneration = $userTank->regeneration + 10;
 
             $userTank->update(['regeneration' => $newRegeneration]);
            
