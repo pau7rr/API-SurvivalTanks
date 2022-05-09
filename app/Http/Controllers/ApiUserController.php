@@ -541,7 +541,7 @@ class ApiUserController extends Controller
 
       $user = User::all()->where('id', $userId)->first();
 
-      $userTank = UserTanks::all()->where('id', '=', $user->user_tank_id)->first();
+      $userTank = UserTank::all()->where('id', '=', $user->user_tank_id)->first();
 
       $userTank->tower = $request->tower;
       $userTank->body = $request->body;
