@@ -27,11 +27,11 @@ class ApiUserTankController extends Controller
       
               'success' => false,
       
-              'message' => 'Unable to get User Tanks'
+              'message' => 'Unable to get User Tanks',
       
             ]);
       
-          }
+        }
         
     }
 
@@ -178,5 +178,48 @@ class ApiUserTankController extends Controller
             ]);
       
         }
+    }
+    
+    public function updateSkin(Request $request) {
+    
+        if (Auth::user()) {
+          
+          //Validate request
+          $this->validate($request, [
+            'tower' => 'required',
+            'body' => 'required',
+            'bullet' => 'required',
+          ]);
+    
+          $userId = Auth::id();
+    
+          $user = User::all()->where('id', $userId)->first();
+          $userTank = UserTank::all()->where('id', '=', $user->user_tank_id)->first();
+    
+          $userTank->tower = $request->tower;
+          $userTank->body = $request->body;
+          $userTank->bullet = $request->bullet;
+    
+    
+          $userTank->save();
+          
+          return response()->json([
+    
+            'success' => true,
+    
+            'message' => 'Skin changed successfully'
+    
+          ]);
+        
+        } else {
+    
+          return response()->json([
+    
+            'success' => false,
+    
+            'message' => 'Unable to update skin'
+    
+          ]);
+        } 
     }
 }

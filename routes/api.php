@@ -60,7 +60,7 @@ Route::get('devlogs', [ApiDevlogController::class, 'index']);
 
 Route::get('/usertank', [ApiUserTankController::class, 'getUserTank'])->middleware('auth:api');
 
-Route::put('/usertank/updateSkin', [ApiUserController::class, 'updateSkin'])->middleware('auth:api');
+Route::put('/updateSkin', [ApiUserTankController::class, 'updateSkin'])->middleware('auth:api');
 
 Route::put('/sumStrength', [ApiUserTankController::class, 'sumStrength'])->middleware('auth:api');
 
