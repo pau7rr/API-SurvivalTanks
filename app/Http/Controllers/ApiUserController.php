@@ -468,7 +468,7 @@ class ApiUserController extends Controller
 
       $user = User::all()->where('id', $userId)->first();
 
-      $user->username = $request->username;
+      $user->name = $request->username;
 
       $user->save();
 
