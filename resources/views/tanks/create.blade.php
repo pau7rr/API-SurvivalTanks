@@ -131,7 +131,7 @@
                             <!-- Input Health -->
                             <div class="input-group mx-2 mt-5">
                                 <img src="https://img.icons8.com/metro/52/ffffff/like.png" alt="" class="mx-2 mt-2"/>
-                                <input type="number" name="health" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;" min="100" max="500"/>
+                                <input type="number" name="health" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;" min="25" max="500"/>
                             </div>
                             <!-- Input Velocity -->
                             <div class="input-group mx-2 mt-5">
