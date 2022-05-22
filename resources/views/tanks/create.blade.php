@@ -52,9 +52,6 @@
                                     <img src="../assets/tankConstructor/TowerEdits/Medium1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                     <img src="../assets/tankConstructor/TowerEdits/Medium2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                     <img src="../assets/tankConstructor/TowerEdits/Medium3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="../assets/tankConstructor/TowerEdits/Heavy1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="../assets/tankConstructor/TowerEdits/Heavy2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="../assets/tankConstructor/TowerEdits/Heavy3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>

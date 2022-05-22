@@ -55,9 +55,6 @@
                                     <img src="../../assets/tankConstructor/TowerEdits/Medium1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                     <img src="../../assets/tankConstructor/TowerEdits/Medium2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                     <img src="../../assets/tankConstructor/TowerEdits/Medium3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="../../assets/tankConstructor/TowerEdits/Heavy1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="../../assets/tankConstructor/TowerEdits/Heavy2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="../../assets/tankConstructor/TowerEdits/Heavy3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -129,17 +126,17 @@
                             <div class="input-group mx-2 mt-5">
                                 <img src="https://img.icons8.com/ios/50/ffffff/clenched-fist.png" alt="" class="mx-2">
                                 <!--<label class="form-label mx-3" for="typeNumber">Strengh</label>-->
-                                <input type="number" name="strengh" value="{{ $tank->strengh }}" class="form-control ml-3 mr-4 mt-2 bg-dark rounded rounded-5" style="color: white;"/>
+                                <input type="number" name="strengh" value="{{ $tank->strengh }}" class="form-control ml-3 mr-4 mt-2 bg-dark rounded rounded-5" style="color: white;" min="25" max="75"/>
                             </div>
                             <!-- Input Health -->
                             <div class="input-group mx-2 mt-5">
                                 <img src="https://img.icons8.com/metro/52/ffffff/like.png" alt="" class="mx-2 mt-2"/>
-                                <input type="number" name="health" value="{{ $tank->health }}" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;"/>
+                                <input type="number" name="health" value="{{ $tank->health }}" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;" min="25" max="500"/>
                             </div>
                             <!-- Input Velocity -->
                             <div class="input-group mx-2 mt-5">
                                 <img src="https://img.icons8.com/ios/50/ffffff/running-rabbit.png" alt="" class="mx-2 mt-3 mb-3"/>
-                                <input type="number" name="speed" value="{{ $tank->speed }}" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;"/>
+                                <input type="number" name="speed" value="{{ $tank->speed }}" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;" min="1" max="9"/>
                             </div>
                             <!-- Input Difficulty -->
                             <div class="input-group mx-2 mt-5">
