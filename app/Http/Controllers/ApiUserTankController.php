@@ -190,18 +190,18 @@ class ApiUserTankController extends Controller
             'body' => 'required',
             'bullet' => 'required',
           ]);
-    
           $userId = Auth::id();
-    
+            
           $user = User::all()->where('id', $userId)->first();
           $userTank = UserTank::all()->where('id', '=', $user->user_tank_id)->first();
-    
+          
           $userTank->tower = $request->tower;
           $userTank->body = $request->body;
           $userTank->bullet = $request->bullet;
-    
-    
+          
+          
           $userTank->save();
+          dd($userTank);
           
           return response()->json([
     

@@ -102,13 +102,15 @@
                             <div id="bulletSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
                                     <img src="../../assets/tankConstructor/Bullets/01.png" class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="../../assets/tankConstructor/Bullets/12.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="../../assets/tankConstructor/Bullets/25.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../../assets/tankConstructor/Bullets/02.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../../assets/tankConstructor/Bullets/07.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../../assets/tankConstructor/Bullets/10.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../../assets/tankConstructor/Bullets/14.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../../assets/tankConstructor/Bullets/15.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../../assets/tankConstructor/Bullets/18.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
                                     <img src="../../assets/tankConstructor/Bullets/33.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="../../assets/tankConstructor/Bullets/45.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="../../assets/tankConstructor/Bullets/51.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="../../assets/tankConstructor/Bullets/56.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="../../assets/tankConstructor/Bullets/66.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../../assets/tankConstructor/Bullets/34.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="../../assets/tankConstructor/Bullets/36.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
